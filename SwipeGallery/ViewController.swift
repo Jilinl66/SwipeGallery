@@ -33,6 +33,25 @@ class ViewController: UIViewController {
         thumbImageView.alpha = abs(xFromCenter)/view.center.x
         
         if sender.state == .ended {
+            // Animation card off the screen
+            let threshold = CGFloat(75)
+            let offset = card.bounds.width
+            let gravityOffset = CGFloat(75)
+            if card.center.x < threshold {
+                UIView.animate(withDuration: 0.3, animations: {
+                   card.center.x = card.center.x - offset
+                    card.center.y = card.center.y + gravityOffset
+                })
+                return
+            } else if card.center.x > view.frame.width - threshold {
+                UIView.animate(withDuration: 0.3, animations: {
+                    card.center.x = card.center.x + offset
+                    card.center.y = card.center.y + gravityOffset
+                })
+                return
+            }
+            
+            // Reset to center position
             UIView.animate(withDuration: 0.2, animations: {
                 card.center = self.view.center
                 self.thumbImageView.alpha = 0
