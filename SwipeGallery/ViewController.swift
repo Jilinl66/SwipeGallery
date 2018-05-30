@@ -39,14 +39,14 @@ class ViewController: UIViewController {
             let gravityOffset = CGFloat(75)
             if card.center.x < threshold {
                 UIView.animate(withDuration: 0.3, animations: {
-                   card.center.x = card.center.x - offset
-                    card.center.y = card.center.y + gravityOffset
+                   card.center = CGPoint(x: card.center.x - offset, y: card.center.y + gravityOffset)
+                    card.alpha = 0
                 })
                 return
             } else if card.center.x > view.frame.width - threshold {
                 UIView.animate(withDuration: 0.3, animations: {
-                    card.center.x = card.center.x + offset
-                    card.center.y = card.center.y + gravityOffset
+                    card.center = CGPoint(x: card.center.x + offset, y: card.center.y + gravityOffset)
+                    card.alpha = 0
                 })
                 return
             }
