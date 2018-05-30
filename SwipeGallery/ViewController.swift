@@ -10,7 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var card: UIView!
     @IBOutlet weak var thumbImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -59,5 +61,9 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func resetButtonClicked(_ sender: Any) {
+        card.center = view.center
+        card.alpha = 1
+        thumbImageView.alpha = 0
+    }
 }
-
