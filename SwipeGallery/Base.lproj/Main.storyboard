@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,11 +14,46 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwipeGallery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdY-R0-WLH">
+                                <rect key="frame" x="56" y="177" width="262.5" height="333.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kung Pao Chicken" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDY-1X-QyO" userLabel="Kung Pao Chicken">
+                                        <rect key="frame" x="0.0" y="20" width="262.5" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="C63-9L-hCN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Kung-pao-shanghai" translatesAutoresizingMaskIntoConstraints="NO" id="xyq-Xf-8em">
+                                        <rect key="frame" x="13" y="64" width="236.5" height="249.5"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="xyq-Xf-8em" firstAttribute="top" secondItem="mDY-1X-QyO" secondAttribute="bottom" constant="20" id="GEv-jn-zNu"/>
+                                    <constraint firstItem="mDY-1X-QyO" firstAttribute="top" secondItem="pdY-R0-WLH" secondAttribute="top" constant="20" id="MZc-5h-iXe"/>
+                                    <constraint firstItem="xyq-Xf-8em" firstAttribute="width" secondItem="pdY-R0-WLH" secondAttribute="width" multiplier="0.9" id="aNk-So-Cqt"/>
+                                    <constraint firstAttribute="bottom" secondItem="xyq-Xf-8em" secondAttribute="bottom" constant="20" id="cW7-29-yf0"/>
+                                    <constraint firstItem="mDY-1X-QyO" firstAttribute="centerX" secondItem="pdY-R0-WLH" secondAttribute="centerX" id="koM-aT-HPQ"/>
+                                    <constraint firstItem="xyq-Xf-8em" firstAttribute="centerX" secondItem="pdY-R0-WLH" secondAttribute="centerX" id="ur7-NO-Iue"/>
+                                    <constraint firstItem="mDY-1X-QyO" firstAttribute="width" secondItem="pdY-R0-WLH" secondAttribute="width" id="uxO-gT-nSJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.97134033269999998" blue="0.22556119869999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="pdY-R0-WLH" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="0wo-FR-x7T"/>
+                            <constraint firstItem="pdY-R0-WLH" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="HWE-8x-Nrt"/>
+                            <constraint firstItem="pdY-R0-WLH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="TUl-J7-Y47"/>
+                            <constraint firstItem="pdY-R0-WLH" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="wWh-wi-pxZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -21,4 +61,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="Kung-pao-shanghai" width="2560" height="1702"/>
+    </resources>
 </document>
