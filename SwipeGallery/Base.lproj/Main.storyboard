@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,8 +32,14 @@
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Kung-pao-shanghai" translatesAutoresizingMaskIntoConstraints="NO" id="xyq-Xf-8em">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Kung-pao-shanghai" translatesAutoresizingMaskIntoConstraints="NO" id="xyq-Xf-8em" userLabel="Food Image View">
                                         <rect key="frame" x="13" y="64" width="236.5" height="249.5"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="thumb-up" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kem-Bz-dXb">
+                                        <rect key="frame" x="65.5" y="101" width="131.5" height="131.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Kem-Bz-dXb" secondAttribute="height" multiplier="1:1" id="Azg-PF-15M"/>
+                                        </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -40,9 +47,12 @@
                                 <constraints>
                                     <constraint firstItem="xyq-Xf-8em" firstAttribute="top" secondItem="mDY-1X-QyO" secondAttribute="bottom" constant="20" id="GEv-jn-zNu"/>
                                     <constraint firstItem="mDY-1X-QyO" firstAttribute="top" secondItem="pdY-R0-WLH" secondAttribute="top" constant="20" id="MZc-5h-iXe"/>
+                                    <constraint firstItem="Kem-Bz-dXb" firstAttribute="centerY" secondItem="pdY-R0-WLH" secondAttribute="centerY" id="OkD-wn-u6o"/>
+                                    <constraint firstItem="Kem-Bz-dXb" firstAttribute="width" secondItem="pdY-R0-WLH" secondAttribute="width" multiplier="0.5" id="WRE-Ms-bfs"/>
                                     <constraint firstItem="xyq-Xf-8em" firstAttribute="width" secondItem="pdY-R0-WLH" secondAttribute="width" multiplier="0.9" id="aNk-So-Cqt"/>
                                     <constraint firstAttribute="bottom" secondItem="xyq-Xf-8em" secondAttribute="bottom" constant="20" id="cW7-29-yf0"/>
                                     <constraint firstItem="mDY-1X-QyO" firstAttribute="centerX" secondItem="pdY-R0-WLH" secondAttribute="centerX" id="koM-aT-HPQ"/>
+                                    <constraint firstItem="Kem-Bz-dXb" firstAttribute="centerX" secondItem="pdY-R0-WLH" secondAttribute="centerX" id="sX7-Ex-xcW"/>
                                     <constraint firstItem="xyq-Xf-8em" firstAttribute="centerX" secondItem="pdY-R0-WLH" secondAttribute="centerX" id="ur7-NO-Iue"/>
                                     <constraint firstItem="mDY-1X-QyO" firstAttribute="width" secondItem="pdY-R0-WLH" secondAttribute="width" id="uxO-gT-nSJ"/>
                                 </constraints>
@@ -60,6 +70,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="thumbImageView" destination="Kem-Bz-dXb" id="Rgb-Gi-vbH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="IGP-8i-Pve">
@@ -72,5 +85,6 @@
     </scenes>
     <resources>
         <image name="Kung-pao-shanghai" width="2560" height="1702"/>
+        <image name="thumb-up" width="512" height="512"/>
     </resources>
 </document>
