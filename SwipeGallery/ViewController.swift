@@ -22,14 +22,16 @@ class ViewController: UIViewController {
             Log.logger.error("No attached view to tap gesture")
             return
         }
-        let point = sender.translation(in: card)
+        let point = sender.translation(in: view)
         card.center = CGPoint(x: view.center.x + point.x, y: view.center.y + point.y)
-        
+
         let xFromCenter = card.center.x - view.center.x
         
         // Rotate the card
         let divisor = (view.frame.width / 2) / (35 * CGFloat.pi / 180)
-        card.transform = CGAffineTransform(rotationAngle: xFromCenter / divisor)
+        let scaleThreshold = CGFloat(120)
+        let scale = min(scaleThreshold/abs(xFromCenter), 1)
+        card.transform = CGAffineTransform(rotationAngle: xFromCenter / divisor).scaledBy(x: scale, y: scale)
         
         // Change thumb and down image
         if xFromCenter > 0 { // Swipe to the right
@@ -44,7 +46,7 @@ class ViewController: UIViewController {
         if sender.state == .ended {
             // Animation card off the screen
             let threshold = CGFloat(75)
-            let offset = card.bounds.width
+            let offset = card.bounds.width / 2
             let gravityOffset = CGFloat(75)
             if card.center.x < threshold {
                 UIView.animate(withDuration: 0.3, animations: {
@@ -59,7 +61,7 @@ class ViewController: UIViewController {
                 })
                 return
             }
-            
+
             // Reset to center position
             resetCard()
         }
