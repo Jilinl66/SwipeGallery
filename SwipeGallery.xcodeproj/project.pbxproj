@@ -17,6 +17,7 @@
 		44205AEB20BE75A900431637 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44205AEA20BE75A900431637 /* Log.swift */; };
 		44205AED20BE790100431637 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 44205AEC20BE790100431637 /* README.md */; };
 		44D2895020BE8540003D3BD6 /* Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44D2894F20BE8540003D3BD6 /* Log.framework */; };
+		44FC979320C0AFBB00EA1A89 /* DesignablePlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC979220C0AFBB00EA1A89 /* DesignablePlusButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		44205AEA20BE75A900431637 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		44205AEC20BE790100431637 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		44D2894F20BE8540003D3BD6 /* Log.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Log.framework; path = Carthage/Build/iOS/Log.framework; sourceTree = "<group>"; };
+		44FC979220C0AFBB00EA1A89 /* DesignablePlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignablePlusButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 		44D2895220BF2DC1003D3BD6 /* VIew */ = {
 			isa = PBXGroup;
 			children = (
+				44FC979120C0AF8C00EA1A89 /* CustomizedView */,
 				44205ABF20BE33BC00431637 /* Main.storyboard */,
 			);
 			name = VIew;
@@ -173,6 +176,14 @@
 				44205AEA20BE75A900431637 /* Log.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		44FC979120C0AF8C00EA1A89 /* CustomizedView */ = {
+			isa = PBXGroup;
+			children = (
+				44FC979220C0AFBB00EA1A89 /* DesignablePlusButton.swift */,
+			);
+			name = CustomizedView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +341,7 @@
 				44205ABE20BE33BC00431637 /* ViewController.swift in Sources */,
 				44205ABC20BE33BC00431637 /* AppDelegate.swift in Sources */,
 				44205AEB20BE75A900431637 /* Log.swift in Sources */,
+				44FC979320C0AFBB00EA1A89 /* DesignablePlusButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
