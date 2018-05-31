@@ -1,0 +1,9 @@
+{
+  "commitish" : "v1.0",
+  "iOS" : [
+    {
+      "name" : "Log",
+      "hash" : "44bcef5303639d4c0b18709bda7f954b1e2a488333260e1adeb37402661cb4fb"
+    }
+  ]
+}
