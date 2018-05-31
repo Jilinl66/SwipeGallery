@@ -26,12 +26,19 @@ class ViewController: UIViewController {
         card.center = CGPoint(x: view.center.x + point.x, y: view.center.y + point.y)
         
         let xFromCenter = card.center.x - view.center.x
+        
+        // Rotate the card
+        let divisor = (view.frame.width / 2) / (35 * CGFloat.pi / 180)
+        card.transform = CGAffineTransform(rotationAngle: xFromCenter / divisor)
+        
+        // Change thumb and down image
         if xFromCenter > 0 { // Swipe to the right
             thumbImageView.image = #imageLiteral(resourceName: "thumb-up")
         } else {
             thumbImageView.image = #imageLiteral(resourceName: "thumb-down")
         }
         
+        // Set up alpha based on position
         thumbImageView.alpha = abs(xFromCenter)/view.center.x
         
         if sender.state == .ended {
@@ -54,16 +61,20 @@ class ViewController: UIViewController {
             }
             
             // Reset to center position
-            UIView.animate(withDuration: 0.2, animations: {
-                card.center = self.view.center
-                self.thumbImageView.alpha = 0
-            })
+            resetCard()
         }
     }
     
     @IBAction func resetButtonClicked(_ sender: Any) {
-        card.center = view.center
-        card.alpha = 1
-        thumbImageView.alpha = 0
+        resetCard()
+    }
+    
+    private func resetCard() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.card.center = self.view.center
+            self.card.alpha = 1
+            self.thumbImageView.alpha = 0
+            self.card.transform = CGAffineTransform.identity
+        })
     }
 }
