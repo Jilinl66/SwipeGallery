@@ -11,7 +11,8 @@ import UIKit
 @IBDesignable class DesignablePlusButton: UIButton {
     @IBInspectable var fillColor: UIColor = UIColor.blue
     @IBInspectable var pathColor: UIColor = UIColor.white
-
+    @IBInspectable var isAddButton: Bool = true
+    
     override func draw(_ rect: CGRect) {
         // Draw circle
         let path = UIBezierPath(ovalIn: rect)
@@ -24,7 +25,9 @@ import UIKit
     
     func drawSign() {
         drawHorizontalDash()
-        drawVerticalDash()
+        if isAddButton {
+            drawVerticalDash()
+        }
     }
     
     func drawHorizontalDash() {

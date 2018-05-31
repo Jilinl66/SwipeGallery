@@ -82,7 +82,19 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" red="0.10980392160000001" green="0.20000000000000001" blue="0.63" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isAddButton" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDv-cT-uo1" userLabel="Plus Button" customClass="DesignablePlusButton" customModule="SwipeGallery" customModuleProvider="target">
+                                <rect key="frame" x="24" y="46" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EDv-cT-uo1" secondAttribute="height" multiplier="1:1" id="HSJ-eU-TMJ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
@@ -92,13 +104,19 @@
                             <constraint firstItem="pdY-R0-WLH" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="0wo-FR-x7T"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6Lj-1t-fA0" secondAttribute="trailing" constant="24" id="8YY-L1-yB5"/>
                             <constraint firstItem="6Lj-1t-fA0" firstAttribute="top" secondItem="xHT-3i-sVa" secondAttribute="top" id="CH9-t8-d5L"/>
+                            <constraint firstItem="EDv-cT-uo1" firstAttribute="width" secondItem="EDv-cT-uo1" secondAttribute="height" multiplier="1:1" id="CLS-9i-pXz"/>
                             <constraint firstItem="6Lj-1t-fA0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="CZY-jj-Wuf"/>
+                            <constraint firstItem="EDv-cT-uo1" firstAttribute="width" secondItem="6Lj-1t-fA0" secondAttribute="width" id="F5B-Ku-bF0"/>
                             <constraint firstItem="pdY-R0-WLH" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="HWE-8x-Nrt"/>
+                            <constraint firstItem="EDv-cT-uo1" firstAttribute="top" secondItem="6Lj-1t-fA0" secondAttribute="top" id="Imr-qB-fe4"/>
                             <constraint firstItem="pdY-R0-WLH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="TUl-J7-Y47"/>
                             <constraint firstItem="xHT-3i-sVa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="26" id="Txd-hJ-cN0"/>
                             <constraint firstItem="6Lj-1t-fA0" firstAttribute="bottom" secondItem="xHT-3i-sVa" secondAttribute="bottom" id="b5f-fc-MVv"/>
                             <constraint firstItem="xHT-3i-sVa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cPH-hz-lT4"/>
+                            <constraint firstItem="EDv-cT-uo1" firstAttribute="bottom" secondItem="6Lj-1t-fA0" secondAttribute="bottom" id="odf-yY-7e0"/>
                             <constraint firstItem="pdY-R0-WLH" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="wWh-wi-pxZ"/>
+                            <constraint firstItem="EDv-cT-uo1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="yMP-Av-jkl"/>
+                            <constraint firstItem="EDv-cT-uo1" firstAttribute="height" secondItem="6Lj-1t-fA0" secondAttribute="height" id="yfM-Th-77W"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
