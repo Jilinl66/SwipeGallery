@@ -75,18 +75,6 @@
                                     <action selector="resetButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nr0-Bu-ST9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Lj-1t-fA0" userLabel="Plus Button" customClass="DesignablePlusButton" customModule="SwipeGallery" customModuleProvider="target">
-                                <rect key="frame" x="307" y="46" width="44" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="6Lj-1t-fA0" secondAttribute="height" multiplier="1:1" id="HwE-j7-fUO"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isAddButton" value="NO"/>
-                                </userDefinedRuntimeAttributes>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDv-cT-uo1" userLabel="Plus Button" customClass="DesignablePlusButton" customModule="SwipeGallery" customModuleProvider="target">
                                 <rect key="frame" x="24" y="46" width="44" height="44"/>
                                 <constraints>
@@ -98,10 +86,38 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Lj-1t-fA0" userLabel="Minus Button" customClass="DesignablePlusButton" customModule="SwipeGallery" customModuleProvider="target">
+                                <rect key="frame" x="307" y="46" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6Lj-1t-fA0" secondAttribute="height" multiplier="1:1" id="HwE-j7-fUO"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isAddButton" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXZ-6q-vYE">
+                                <rect key="frame" x="223" y="599" width="128" height="44"/>
+                                <color key="backgroundColor" red="0.10980392160000001" green="0.20000000000000001" blue="0.63" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="Ucu-5i-6LH"/>
+                                    <constraint firstAttribute="height" constant="44" id="VN9-Le-raW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Stats Graph">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="qIY-Nk-98v" kind="show" id="brM-N2-Nqh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.97134033269999998" blue="0.22556119869999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="pdY-R0-WLH" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="0wo-FR-x7T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rXZ-6q-vYE" secondAttribute="bottom" constant="24" id="3Lv-NV-hsr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6Lj-1t-fA0" secondAttribute="trailing" constant="24" id="8YY-L1-yB5"/>
                             <constraint firstItem="6Lj-1t-fA0" firstAttribute="top" secondItem="xHT-3i-sVa" secondAttribute="top" id="CH9-t8-d5L"/>
                             <constraint firstItem="EDv-cT-uo1" firstAttribute="width" secondItem="EDv-cT-uo1" secondAttribute="height" multiplier="1:1" id="CLS-9i-pXz"/>
@@ -112,6 +128,7 @@
                             <constraint firstItem="pdY-R0-WLH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="TUl-J7-Y47"/>
                             <constraint firstItem="xHT-3i-sVa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="26" id="Txd-hJ-cN0"/>
                             <constraint firstItem="6Lj-1t-fA0" firstAttribute="bottom" secondItem="xHT-3i-sVa" secondAttribute="bottom" id="b5f-fc-MVv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rXZ-6q-vYE" secondAttribute="trailing" constant="24" id="bQ9-VT-ao7"/>
                             <constraint firstItem="xHT-3i-sVa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cPH-hz-lT4"/>
                             <constraint firstItem="EDv-cT-uo1" firstAttribute="bottom" secondItem="6Lj-1t-fA0" secondAttribute="bottom" id="odf-yY-7e0"/>
                             <constraint firstItem="pdY-R0-WLH" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="wWh-wi-pxZ"/>
@@ -132,6 +149,35 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Njo-es-Rvz">
+            <objects>
+                <viewController id="qIY-Nk-98v" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yEZ-Vb-a8j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SnX-s9-FAI" customClass="ProgressView" customModule="SwipeGallery" customModuleProvider="target">
+                                <rect key="frame" x="38" y="193.5" width="300" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="SnX-s9-FAI" secondAttribute="height" multiplier="1:1" id="AoZ-vd-heK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SnX-s9-FAI" firstAttribute="width" secondItem="yEZ-Vb-a8j" secondAttribute="width" multiplier="0.8" id="78g-aF-ywP"/>
+                            <constraint firstItem="SnX-s9-FAI" firstAttribute="centerX" secondItem="Q8W-1x-gc1" secondAttribute="centerX" id="gdL-SV-1Un"/>
+                            <constraint firstItem="SnX-s9-FAI" firstAttribute="centerY" secondItem="Q8W-1x-gc1" secondAttribute="centerY" id="iaH-te-0e3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Q8W-1x-gc1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gu3-Ym-AV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="826" y="34"/>
         </scene>
     </scenes>
     <resources>
