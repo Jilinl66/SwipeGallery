@@ -159,7 +159,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SnX-s9-FAI" customClass="ProgressView" customModule="SwipeGallery" customModuleProvider="target">
-                                <rect key="frame" x="37.5" y="193.5" width="300" height="300"/>
+                                <rect key="frame" x="66.5" y="-79.5" width="534" height="534"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="SnX-s9-FAI" secondAttribute="height" multiplier="1:1" id="AoZ-vd-heK"/>

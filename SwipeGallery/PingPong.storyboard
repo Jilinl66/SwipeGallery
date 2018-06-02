@@ -35,15 +35,26 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVf-X0-sje" userLabel="Board View">
+                                <rect key="frame" x="-0.5" y="69" width="667" height="306"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="GVf-X0-sje" firstAttribute="top" secondItem="uXG-g9-hPI" secondAttribute="bottom" id="3MC-4T-ggz"/>
+                            <constraint firstItem="GVf-X0-sje" firstAttribute="width" secondItem="afK-GO-bUf" secondAttribute="width" id="MKR-aY-Hpi"/>
                             <constraint firstItem="uXG-g9-hPI" firstAttribute="centerX" secondItem="85r-0B-D4u" secondAttribute="centerX" id="QMG-cg-Hrb"/>
                             <constraint firstItem="uXG-g9-hPI" firstAttribute="top" secondItem="85r-0B-D4u" secondAttribute="top" constant="40" id="QZY-x7-jT8"/>
                             <constraint firstItem="uXG-g9-hPI" firstAttribute="width" secondItem="afK-GO-bUf" secondAttribute="width" id="Z0P-hm-GYU"/>
+                            <constraint firstItem="GVf-X0-sje" firstAttribute="centerX" secondItem="85r-0B-D4u" secondAttribute="centerX" id="dI7-Jj-oBn"/>
+                            <constraint firstItem="85r-0B-D4u" firstAttribute="bottom" secondItem="GVf-X0-sje" secondAttribute="bottom" id="w7u-B0-Py8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="85r-0B-D4u"/>
                     </view>
+                    <connections>
+                        <outlet property="boardView" destination="GVf-X0-sje" id="sdM-vN-fvG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ve4-eU-P34" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
