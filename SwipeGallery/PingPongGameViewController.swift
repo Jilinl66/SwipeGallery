@@ -14,10 +14,13 @@ class PingPongGameViewController: UIViewController {
     
     struct Constants {
         static let paddleHeight: CGFloat = 60.0
+        static let velocity: CGPoint = CGPoint(x: 10, y: 10)
     }
     
     var paddleView: PaddleView!
     var ballView: UIView!
+    
+    var pause = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +30,7 @@ class PingPongGameViewController: UIViewController {
         super.viewDidLayoutSubviews()
         drawPaddle()
         drawBall()
+        Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(play), userInfo: nil, repeats: true)
     }
     
     private func drawPaddle() {
@@ -60,6 +64,11 @@ class PingPongGameViewController: UIViewController {
         boardView.addSubview(ballView)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if pause {
+            pause = false
+        }
+    }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
         let location = touch.location(in: boardView)
@@ -67,5 +76,12 @@ class PingPongGameViewController: UIViewController {
             return
         }
         paddleView.center = CGPoint(x: paddleView.center.x, y: location.y)
+    }
+    
+    @objc private func play() {
+        if pause {
+            return
+        }
+        ballView.center = CGPoint(x: ballView.center.x + Constants.velocity.x, y: ballView.center.y + Constants.velocity.y)
     }
 }
