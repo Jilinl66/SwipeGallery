@@ -15,6 +15,7 @@ class PingPongGameViewController: UIViewController {
     struct Constants {
         static let paddleWidth: CGFloat = 10.0
         static let paddleHeight: CGFloat = 60.0
+        static let margin: CGFloat = 10.0
         static let velocity: CGPoint = CGPoint(x: 10, y: 10)
     }
     
@@ -40,9 +41,9 @@ class PingPongGameViewController: UIViewController {
     }
     
     private func drawPaddle() {
-        paddleLeft = PaddleView(frame: CGRect(x: 10, y: 10, width: Constants.paddleWidth, height: Constants.paddleHeight))
+        paddleLeft = PaddleView(frame: CGRect(x: Constants.margin, y: Constants.margin, width: Constants.paddleWidth, height: Constants.paddleHeight))
         boardView.addSubview(paddleLeft)
-        paddleRight = PaddleView(frame: CGRect(x: boardView.bounds.width - Constants.paddleWidth - 10, y: 10, width: 10, height: Constants.paddleHeight))
+        paddleRight = PaddleView(frame: CGRect(x: boardView.bounds.width - Constants.paddleWidth - Constants.margin, y: Constants.margin, width: Constants.paddleWidth, height: Constants.paddleHeight))
         boardView.addSubview(paddleRight)
     }
     
@@ -91,5 +92,20 @@ class PingPongGameViewController: UIViewController {
             return
         }
         ballView.center = CGPoint(x: ballView.center.x + Constants.velocity.x, y: ballView.center.y + Constants.velocity.y)
+        detectGoal()
+    }
+    
+    private func detectGoal() {
+        if ballView.center.x < 5 {
+            scoreRight += 1
+            kickOff()
+        } else if ballView.center.x > boardView.bounds.width - 5 {
+            scoreLeft += 1
+            kickOff()
+        }
+    }
+    
+    private func kickOff() {
+        
     }
 }
