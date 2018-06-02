@@ -13,12 +13,18 @@ class PingPongGameViewController: UIViewController {
     @IBOutlet weak var boardView: UIView!
     
     struct Constants {
+        static let paddleWidth: CGFloat = 10.0
         static let paddleHeight: CGFloat = 60.0
         static let velocity: CGPoint = CGPoint(x: 10, y: 10)
     }
     
-    var paddleView: PaddleView!
+    var paddleLeft: PaddleView!
+    var paddleRight: PaddleView!
+    
     var ballView: UIView!
+    
+    var scoreLeft: Int = 0
+    var scoreRight: Int = 0
     
     var pause = true
     
@@ -34,8 +40,10 @@ class PingPongGameViewController: UIViewController {
     }
     
     private func drawPaddle() {
-        paddleView = PaddleView(frame: CGRect(x: 10, y: 10, width: 10, height: Constants.paddleHeight))
-        boardView.addSubview(paddleView)
+        paddleLeft = PaddleView(frame: CGRect(x: 10, y: 10, width: Constants.paddleWidth, height: Constants.paddleHeight))
+        boardView.addSubview(paddleLeft)
+        paddleRight = PaddleView(frame: CGRect(x: boardView.bounds.width - Constants.paddleWidth - 10, y: 10, width: 10, height: Constants.paddleHeight))
+        boardView.addSubview(paddleRight)
     }
     
     private func drawBall() {
@@ -75,7 +83,7 @@ class PingPongGameViewController: UIViewController {
         if location.y < Constants.paddleHeight / 2 || location.y > boardView.bounds.height - Constants.paddleHeight / 2 {
             return
         }
-        paddleView.center = CGPoint(x: paddleView.center.x, y: location.y)
+        paddleRight.center = CGPoint(x: paddleRight.center.x, y: location.y)
     }
     
     @objc private func play() {
