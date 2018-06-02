@@ -12,6 +12,8 @@
 		4419B8C320C2055300572940 /* DrawPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4419B8C220C2055300572940 /* DrawPage.storyboard */; };
 		4419B8C620C20B6E00572940 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4419B8C520C20B6E00572940 /* Line.swift */; };
 		4419B8C820C25A3E00572940 /* DrawPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4419B8C720C25A3E00572940 /* DrawPageViewController.swift */; };
+		4419B8CA20C2798B00572940 /* PaddleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4419B8C920C2798B00572940 /* PaddleView.swift */; };
+		4419B8CE20C27A8500572940 /* PingPongGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4419B8CD20C27A8500572940 /* PingPongGameViewController.swift */; };
 		44205ABC20BE33BC00431637 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44205ABB20BE33BC00431637 /* AppDelegate.swift */; };
 		44205ABE20BE33BC00431637 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44205ABD20BE33BC00431637 /* ViewController.swift */; };
 		44205AC120BE33BC00431637 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44205ABF20BE33BC00431637 /* Main.storyboard */; };
@@ -48,6 +50,8 @@
 		4419B8C220C2055300572940 /* DrawPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DrawPage.storyboard; sourceTree = "<group>"; };
 		4419B8C520C20B6E00572940 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		4419B8C720C25A3E00572940 /* DrawPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawPageViewController.swift; sourceTree = "<group>"; };
+		4419B8C920C2798B00572940 /* PaddleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddleView.swift; sourceTree = "<group>"; };
+		4419B8CD20C27A8500572940 /* PingPongGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingPongGameViewController.swift; sourceTree = "<group>"; };
 		44205AB820BE33BC00431637 /* SwipeGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwipeGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44205ABB20BE33BC00431637 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44205ABD20BE33BC00431637 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 			children = (
 				44205ABD20BE33BC00431637 /* ViewController.swift */,
 				4419B8C720C25A3E00572940 /* DrawPageViewController.swift */,
+				4419B8CD20C27A8500572940 /* PingPongGameViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 				44FC979220C0AFBB00EA1A89 /* DesignablePlusButton.swift */,
 				4419B8C020C2050B00572940 /* DrawView.swift */,
 				4419B8BC20C0CB0700572940 /* ProgressView.swift */,
+				4419B8C920C2798B00572940 /* PaddleView.swift */,
 			);
 			name = CustomizedView;
 			sourceTree = "<group>";
@@ -362,11 +368,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4419B8CA20C2798B00572940 /* PaddleView.swift in Sources */,
 				44205ABE20BE33BC00431637 /* ViewController.swift in Sources */,
 				4419B8C820C25A3E00572940 /* DrawPageViewController.swift in Sources */,
 				44205ABC20BE33BC00431637 /* AppDelegate.swift in Sources */,
 				4419B8C120C2050B00572940 /* DrawView.swift in Sources */,
 				4419B8BD20C0CB0700572940 /* ProgressView.swift in Sources */,
+				4419B8CE20C27A8500572940 /* PingPongGameViewController.swift in Sources */,
 				44205AEB20BE75A900431637 /* Log.swift in Sources */,
 				4419B8C620C20B6E00572940 /* Line.swift in Sources */,
 				44FC979320C0AFBB00EA1A89 /* DesignablePlusButton.swift in Sources */,
