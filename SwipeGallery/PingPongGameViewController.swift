@@ -12,22 +12,10 @@ class PingPongGameViewController: UIViewController {
 
     var paddleView: PaddleView!
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
-        paddleView = PaddleView(frame: CGRect(x: 10, y: 10, width: 10, height: 60))
-        view.addSubview(paddleView)
-        
-        view.backgroundColor = UIColor.black
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        paddleView = PaddleView(frame: CGRect(x: 10, y: 10, width: 10, height: 60))
+        view.addSubview(paddleView)
     }
     
     override var shouldAutorotate: Bool {
