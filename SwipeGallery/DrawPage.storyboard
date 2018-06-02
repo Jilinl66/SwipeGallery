@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="syj-g1-kzj">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Draw Page View Controller-->
+        <scene sceneID="ozG-ga-jgq">
+            <objects>
+                <viewController id="syj-g1-kzj" customClass="DrawPageViewController" customModule="SwipeGallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EHa-md-I0i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="zEK-0n-lws">
+                                <rect key="frame" x="16" y="64" width="262.5" height="33"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zox-Sm-xF6">
+                                        <rect key="frame" x="0.0" y="0.0" width="65.5" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Red">
+                                            <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="colorChanged:" destination="syj-g1-kzj" eventType="touchUpInside" id="3jJ-yh-FEI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yis-KX-ZTX">
+                                        <rect key="frame" x="65.5" y="0.0" width="66" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Blue"/>
+                                        <connections>
+                                            <action selector="colorChanged:" destination="syj-g1-kzj" eventType="touchUpInside" id="q62-9R-3hj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zst-BI-Oxo">
+                                        <rect key="frame" x="131.5" y="0.0" width="65.5" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Yellow">
+                                            <color key="titleColor" red="1" green="0.97134033269999998" blue="0.22556119869999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="colorChanged:" destination="syj-g1-kzj" eventType="touchUpInside" id="fab-Wd-bXq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZg-g6-TPI">
+                                        <rect key="frame" x="197" y="0.0" width="65.5" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Black">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="colorChanged:" destination="syj-g1-kzj" eventType="touchUpInside" id="QL1-tm-Qgi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I2V-hb-Kqi">
+                                <rect key="frame" x="294" y="64" width="65" height="33"/>
+                                <color key="backgroundColor" red="0.10980392160000001" green="0.20000000000000001" blue="0.63" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearButtonClicked:" destination="syj-g1-kzj" eventType="touchUpInside" id="Pik-mb-W7Z"/>
+                                </connections>
+                            </button>
+                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a2M-2B-Fie" customClass="DrawView" customModule="SwipeGallery" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="133" width="375" height="533.5"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TSr-u9-3Ue" firstAttribute="trailing" secondItem="I2V-hb-Kqi" secondAttribute="trailing" constant="16" id="3em-me-Z9s"/>
+                            <constraint firstItem="TSr-u9-3Ue" firstAttribute="bottom" secondItem="a2M-2B-Fie" secondAttribute="bottom" id="8Zb-FS-NS3"/>
+                            <constraint firstItem="zEK-0n-lws" firstAttribute="width" secondItem="EHa-md-I0i" secondAttribute="width" multiplier="0.7" id="9La-kB-Z1g"/>
+                            <constraint firstItem="I2V-hb-Kqi" firstAttribute="bottom" secondItem="zEK-0n-lws" secondAttribute="bottom" id="Cm5-W9-p8n"/>
+                            <constraint firstItem="zEK-0n-lws" firstAttribute="leading" secondItem="TSr-u9-3Ue" secondAttribute="leading" constant="16" id="P2L-di-wg3"/>
+                            <constraint firstItem="I2V-hb-Kqi" firstAttribute="width" secondItem="Zox-Sm-xF6" secondAttribute="width" id="VLj-Lr-Uuy"/>
+                            <constraint firstItem="a2M-2B-Fie" firstAttribute="width" secondItem="EHa-md-I0i" secondAttribute="width" id="aX5-aZ-aQy"/>
+                            <constraint firstItem="a2M-2B-Fie" firstAttribute="height" secondItem="EHa-md-I0i" secondAttribute="height" multiplier="0.8" id="joy-RS-e5M"/>
+                            <constraint firstItem="zEK-0n-lws" firstAttribute="top" secondItem="TSr-u9-3Ue" secondAttribute="top" constant="44" id="nDS-k3-GcC"/>
+                            <constraint firstItem="a2M-2B-Fie" firstAttribute="centerX" secondItem="TSr-u9-3Ue" secondAttribute="centerX" id="rWx-sH-Sfc"/>
+                            <constraint firstItem="I2V-hb-Kqi" firstAttribute="top" secondItem="zEK-0n-lws" secondAttribute="top" id="zke-2c-hln"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TSr-u9-3Ue"/>
+                    </view>
+                    <connections>
+                        <outlet property="drawView" destination="a2M-2B-Fie" id="FXS-HN-Rxy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ap-CW-eT2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8.8000000000000007" y="153.37331334332833"/>
+        </scene>
+    </scenes>
+</document>
