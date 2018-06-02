@@ -15,7 +15,7 @@
 		4419B8CA20C2798B00572940 /* PaddleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4419B8C920C2798B00572940 /* PaddleView.swift */; };
 		4419B8CE20C27A8500572940 /* PingPongGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4419B8CD20C27A8500572940 /* PingPongGameViewController.swift */; };
 		44205ABC20BE33BC00431637 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44205ABB20BE33BC00431637 /* AppDelegate.swift */; };
-		44205ABE20BE33BC00431637 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44205ABD20BE33BC00431637 /* ViewController.swift */; };
+		44205ABE20BE33BC00431637 /* SwipeImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44205ABD20BE33BC00431637 /* SwipeImagesViewController.swift */; };
 		44205AC120BE33BC00431637 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44205ABF20BE33BC00431637 /* Main.storyboard */; };
 		44205AC320BE33BE00431637 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44205AC220BE33BE00431637 /* Assets.xcassets */; };
 		44205AC620BE33BE00431637 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44205AC420BE33BE00431637 /* LaunchScreen.storyboard */; };
@@ -54,7 +54,7 @@
 		4419B8CD20C27A8500572940 /* PingPongGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingPongGameViewController.swift; sourceTree = "<group>"; };
 		44205AB820BE33BC00431637 /* SwipeGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwipeGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44205ABB20BE33BC00431637 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		44205ABD20BE33BC00431637 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		44205ABD20BE33BC00431637 /* SwipeImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeImagesViewController.swift; sourceTree = "<group>"; };
 		44205AC020BE33BC00431637 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		44205AC220BE33BE00431637 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44205AC520BE33BE00431637 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -179,7 +179,7 @@
 		44D2895120BF2DB4003D3BD6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				44205ABD20BE33BC00431637 /* ViewController.swift */,
+				44205ABD20BE33BC00431637 /* SwipeImagesViewController.swift */,
 				4419B8C720C25A3E00572940 /* DrawPageViewController.swift */,
 				4419B8CD20C27A8500572940 /* PingPongGameViewController.swift */,
 			);
@@ -369,7 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4419B8CA20C2798B00572940 /* PaddleView.swift in Sources */,
-				44205ABE20BE33BC00431637 /* ViewController.swift in Sources */,
+				44205ABE20BE33BC00431637 /* SwipeImagesViewController.swift in Sources */,
 				4419B8C820C25A3E00572940 /* DrawPageViewController.swift in Sources */,
 				44205ABC20BE33BC00431637 /* AppDelegate.swift in Sources */,
 				4419B8C120C2050B00572940 /* DrawView.swift in Sources */,

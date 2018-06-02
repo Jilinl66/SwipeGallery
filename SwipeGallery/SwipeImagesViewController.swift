@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SwipeImagesViewController: UIViewController {
 
     @IBOutlet weak var card: UIView!
     @IBOutlet weak var thumbImageView: UIImageView!

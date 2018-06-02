@@ -13,6 +13,8 @@ import UIKit
 class PaddleView: UIView {
 
     override func draw(_ rect: CGRect) {
-        
+        let square = CGRect(x: 0, y: 0, width: 10, height: 60)
+        UIColor.white.setFill()
+        UIRectFill(square)
     }
 }
