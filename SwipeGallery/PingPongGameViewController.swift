@@ -12,6 +12,10 @@ class PingPongGameViewController: UIViewController {
 
     @IBOutlet weak var boardView: UIView!
     
+    struct Constants {
+        static let paddleHeight: CGFloat = 60.0
+    }
+    
     var paddleView: PaddleView!
     var ballView: UIView!
     
@@ -26,7 +30,7 @@ class PingPongGameViewController: UIViewController {
     }
     
     private func drawPaddle() {
-        paddleView = PaddleView(frame: CGRect(x: 10, y: 10, width: 10, height: 60))
+        paddleView = PaddleView(frame: CGRect(x: 10, y: 10, width: 10, height: Constants.paddleHeight))
         boardView.addSubview(paddleView)
     }
     
@@ -59,6 +63,9 @@ class PingPongGameViewController: UIViewController {
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
         let location = touch.location(in: boardView)
+        if location.y < Constants.paddleHeight / 2 || location.y > boardView.bounds.height - Constants.paddleHeight / 2 {
+            return
+        }
         paddleView.center = CGPoint(x: paddleView.center.x, y: location.y)
     }
 }
