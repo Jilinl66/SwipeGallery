@@ -149,5 +149,7 @@ class PingPongGameViewController: UIViewController {
     private func kickOff() {
         pause = true
         ballView.center = CGPoint(x: boardView.bounds.midX, y: boardView.bounds.midY)
+        paddleLeft.center = CGPoint(x: paddleLeft.center.x, y: boardView.bounds.midY)
+        paddleRight.center = CGPoint(x: paddleRight.center.x, y: boardView.bounds.midY)
     }
 }
