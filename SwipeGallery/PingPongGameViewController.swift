@@ -12,23 +12,34 @@ class PingPongGameViewController: UIViewController {
 
     @IBOutlet weak var boardView: UIView!
     
+    @IBOutlet weak var robotScoreLabel: UILabel!
+    @IBOutlet weak var myScoreLabel: UILabel!
+    
+    var paddleLeft: PaddleView!
+    var paddleRight: PaddleView!
+    var ballView: UIView!
+    
     struct Constants {
         static let margin: CGFloat = 10.0
     }
     
     let paddleWidth: CGFloat = 10.0
     let paddleHeight: CGFloat = 60.0
-    var velocity = CGPoint(x: -10, y: 10)
+    var velocity = CGPoint(x: 10, y: 10)
     var topBottomThreshold: CGFloat {
         return abs(velocity.y)
     }
-    var paddleLeft: PaddleView!
-    var paddleRight: PaddleView!
     
-    var ballView: UIView!
-    
-    var scoreLeft: Int = 0
-    var scoreRight: Int = 0
+    var scoreLeft: Int = 0 {
+        didSet {
+            robotScoreLabel.text = "Robot Score: \(scoreLeft)"
+        }
+    }
+    var scoreRight: Int = 0 {
+        didSet {
+            myScoreLabel.text = "My Score: \(scoreRight)"
+        }
+    }
     
     var pause = true
     
@@ -38,6 +49,9 @@ class PingPongGameViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        if ballView != nil {
+            return
+        }
         drawPaddle()
         drawBall()
         Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(play), userInfo: nil, repeats: true)
