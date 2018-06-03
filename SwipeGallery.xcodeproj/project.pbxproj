@@ -12,15 +12,19 @@
 		4419B8C320C2055300572940 /* DrawPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4419B8C220C2055300572940 /* DrawPage.storyboard */; };
 		4419B8C620C20B6E00572940 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4419B8C520C20B6E00572940 /* Line.swift */; };
 		4419B8C820C25A3E00572940 /* DrawPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4419B8C720C25A3E00572940 /* DrawPageViewController.swift */; };
+		4419B8CA20C2798B00572940 /* PaddleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4419B8C920C2798B00572940 /* PaddleView.swift */; };
+		4419B8CE20C27A8500572940 /* PingPongGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4419B8CD20C27A8500572940 /* PingPongGameViewController.swift */; };
 		44205ABC20BE33BC00431637 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44205ABB20BE33BC00431637 /* AppDelegate.swift */; };
-		44205ABE20BE33BC00431637 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44205ABD20BE33BC00431637 /* ViewController.swift */; };
-		44205AC120BE33BC00431637 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44205ABF20BE33BC00431637 /* Main.storyboard */; };
+		44205ABE20BE33BC00431637 /* SwipeImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44205ABD20BE33BC00431637 /* SwipeImagesViewController.swift */; };
+		44205AC120BE33BC00431637 /* SwipeImages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44205ABF20BE33BC00431637 /* SwipeImages.storyboard */; };
 		44205AC320BE33BE00431637 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44205AC220BE33BE00431637 /* Assets.xcassets */; };
 		44205AC620BE33BE00431637 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44205AC420BE33BE00431637 /* LaunchScreen.storyboard */; };
 		44205AD120BE33BE00431637 /* SwipeGalleryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44205AD020BE33BE00431637 /* SwipeGalleryTests.swift */; };
 		44205ADC20BE33BE00431637 /* SwipeGalleryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44205ADB20BE33BE00431637 /* SwipeGalleryUITests.swift */; };
 		44205AEB20BE75A900431637 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44205AEA20BE75A900431637 /* Log.swift */; };
 		44205AED20BE790100431637 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 44205AEC20BE790100431637 /* README.md */; };
+		4457272120C319560056A7B6 /* PingPong.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4457272020C319560056A7B6 /* PingPong.storyboard */; };
+		4457272320C3BB4F0056A7B6 /* PongDashLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4457272220C3BB4F0056A7B6 /* PongDashLine.swift */; };
 		44D2895020BE8540003D3BD6 /* Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44D2894F20BE8540003D3BD6 /* Log.framework */; };
 		44FC979320C0AFBB00EA1A89 /* DesignablePlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC979220C0AFBB00EA1A89 /* DesignablePlusButton.swift */; };
 /* End PBXBuildFile section */
@@ -48,10 +52,12 @@
 		4419B8C220C2055300572940 /* DrawPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DrawPage.storyboard; sourceTree = "<group>"; };
 		4419B8C520C20B6E00572940 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		4419B8C720C25A3E00572940 /* DrawPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawPageViewController.swift; sourceTree = "<group>"; };
+		4419B8C920C2798B00572940 /* PaddleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddleView.swift; sourceTree = "<group>"; };
+		4419B8CD20C27A8500572940 /* PingPongGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingPongGameViewController.swift; sourceTree = "<group>"; };
 		44205AB820BE33BC00431637 /* SwipeGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwipeGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44205ABB20BE33BC00431637 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		44205ABD20BE33BC00431637 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		44205AC020BE33BC00431637 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		44205ABD20BE33BC00431637 /* SwipeImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeImagesViewController.swift; sourceTree = "<group>"; };
+		44205AC020BE33BC00431637 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SwipeImages.storyboard; sourceTree = "<group>"; };
 		44205AC220BE33BE00431637 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44205AC520BE33BE00431637 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44205AC720BE33BE00431637 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,6 +69,8 @@
 		44205ADD20BE33BE00431637 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44205AEA20BE75A900431637 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		44205AEC20BE790100431637 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4457272020C319560056A7B6 /* PingPong.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PingPong.storyboard; sourceTree = "<group>"; };
+		4457272220C3BB4F0056A7B6 /* PongDashLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PongDashLine.swift; sourceTree = "<group>"; };
 		44D2894F20BE8540003D3BD6 /* Log.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Log.framework; path = Carthage/Build/iOS/Log.framework; sourceTree = "<group>"; };
 		44FC979220C0AFBB00EA1A89 /* DesignablePlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignablePlusButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,8 +115,9 @@
 		4419B8C420C2055A00572940 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				44205ABF20BE33BC00431637 /* Main.storyboard */,
+				44205ABF20BE33BC00431637 /* SwipeImages.storyboard */,
 				4419B8C220C2055300572940 /* DrawPage.storyboard */,
+				4457272020C319560056A7B6 /* PingPong.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -175,8 +184,9 @@
 		44D2895120BF2DB4003D3BD6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				44205ABD20BE33BC00431637 /* ViewController.swift */,
+				44205ABD20BE33BC00431637 /* SwipeImagesViewController.swift */,
 				4419B8C720C25A3E00572940 /* DrawPageViewController.swift */,
+				4419B8CD20C27A8500572940 /* PingPongGameViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -205,6 +215,8 @@
 				44FC979220C0AFBB00EA1A89 /* DesignablePlusButton.swift */,
 				4419B8C020C2050B00572940 /* DrawView.swift */,
 				4419B8BC20C0CB0700572940 /* ProgressView.swift */,
+				4419B8C920C2798B00572940 /* PaddleView.swift */,
+				4457272220C3BB4F0056A7B6 /* PongDashLine.swift */,
 			);
 			name = CustomizedView;
 			sourceTree = "<group>";
@@ -314,11 +326,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4457272120C319560056A7B6 /* PingPong.storyboard in Resources */,
 				4419B8C320C2055300572940 /* DrawPage.storyboard in Resources */,
 				44205AC620BE33BE00431637 /* LaunchScreen.storyboard in Resources */,
 				44205AC320BE33BE00431637 /* Assets.xcassets in Resources */,
 				44205AED20BE790100431637 /* README.md in Resources */,
-				44205AC120BE33BC00431637 /* Main.storyboard in Resources */,
+				44205AC120BE33BC00431637 /* SwipeImages.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,11 +375,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44205ABE20BE33BC00431637 /* ViewController.swift in Sources */,
+				4419B8CA20C2798B00572940 /* PaddleView.swift in Sources */,
+				44205ABE20BE33BC00431637 /* SwipeImagesViewController.swift in Sources */,
 				4419B8C820C25A3E00572940 /* DrawPageViewController.swift in Sources */,
 				44205ABC20BE33BC00431637 /* AppDelegate.swift in Sources */,
 				4419B8C120C2050B00572940 /* DrawView.swift in Sources */,
+				4457272320C3BB4F0056A7B6 /* PongDashLine.swift in Sources */,
 				4419B8BD20C0CB0700572940 /* ProgressView.swift in Sources */,
+				4419B8CE20C27A8500572940 /* PingPongGameViewController.swift in Sources */,
 				44205AEB20BE75A900431637 /* Log.swift in Sources */,
 				4419B8C620C20B6E00572940 /* Line.swift in Sources */,
 				44FC979320C0AFBB00EA1A89 /* DesignablePlusButton.swift in Sources */,
@@ -405,12 +421,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		44205ABF20BE33BC00431637 /* Main.storyboard */ = {
+		44205ABF20BE33BC00431637 /* SwipeImages.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				44205AC020BE33BC00431637 /* Base */,
 			);
-			name = Main.storyboard;
+			name = SwipeImages.storyboard;
 			sourceTree = "<group>";
 		};
 		44205AC420BE33BE00431637 /* LaunchScreen.storyboard */ = {

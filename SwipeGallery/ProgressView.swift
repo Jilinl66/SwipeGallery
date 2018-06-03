@@ -56,7 +56,5 @@ import UIKit
         outlineColor.setFill()
         outlinePath.lineWidth = CGFloat(outlineWidth)
         outlinePath.fill()
-        
     }
-
 }

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M5l-gF-T3o">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Ping Pong Game View Controller-->
+        <scene sceneID="h4N-Qi-C1T">
+            <objects>
+                <viewController id="M5l-gF-T3o" customClass="PingPongGameViewController" customModule="SwipeGallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="afK-GO-bUf">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uXG-g9-hPI">
+                                <rect key="frame" x="0.0" y="20" width="667" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Robot Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GwO-Dk-G3f">
+                                        <rect key="frame" x="0.0" y="0.0" width="333.5" height="60"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPM-r5-h5b">
+                                        <rect key="frame" x="333.5" y="0.0" width="333.5" height="60"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="078-z6-hs4"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVf-X0-sje" userLabel="Board View">
+                                <rect key="frame" x="-0.5" y="80" width="667" height="295"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GVf-X0-sje" firstAttribute="top" secondItem="uXG-g9-hPI" secondAttribute="bottom" id="3MC-4T-ggz"/>
+                            <constraint firstItem="GVf-X0-sje" firstAttribute="width" secondItem="afK-GO-bUf" secondAttribute="width" id="MKR-aY-Hpi"/>
+                            <constraint firstItem="uXG-g9-hPI" firstAttribute="centerX" secondItem="85r-0B-D4u" secondAttribute="centerX" id="QMG-cg-Hrb"/>
+                            <constraint firstItem="uXG-g9-hPI" firstAttribute="top" secondItem="85r-0B-D4u" secondAttribute="top" constant="20" id="QZY-x7-jT8"/>
+                            <constraint firstItem="uXG-g9-hPI" firstAttribute="width" secondItem="afK-GO-bUf" secondAttribute="width" id="Z0P-hm-GYU"/>
+                            <constraint firstItem="GVf-X0-sje" firstAttribute="centerX" secondItem="85r-0B-D4u" secondAttribute="centerX" id="dI7-Jj-oBn"/>
+                            <constraint firstItem="85r-0B-D4u" firstAttribute="bottom" secondItem="GVf-X0-sje" secondAttribute="bottom" id="w7u-B0-Py8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="85r-0B-D4u"/>
+                    </view>
+                    <connections>
+                        <outlet property="boardView" destination="GVf-X0-sje" id="sdM-vN-fvG"/>
+                        <outlet property="myScoreLabel" destination="oPM-r5-h5b" id="bGJ-QN-lqg"/>
+                        <outlet property="robotScoreLabel" destination="GwO-Dk-G3f" id="wsg-OE-sTH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ve4-eU-P34" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="99" y="255"/>
+        </scene>
+    </scenes>
+</document>
