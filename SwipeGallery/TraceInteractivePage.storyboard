@@ -10,30 +10,42 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tace Interactive Page View Controller-->
         <scene sceneID="8bB-wA-IZw">
             <objects>
-                <viewController id="KjP-7A-EVR" sceneMemberID="viewController">
+                <viewController id="KjP-7A-EVR" customClass="TaceInteractivePageViewController" customModule="SwipeGallery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wmr-3z-MFV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p36-l2-fx7">
+                                <rect key="frame" x="0.0" y="103" width="375" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aMs-Up-0jQ" customClass="LogoView" customModule="SwipeGallery" customModuleProvider="target">
-                                <rect key="frame" x="167.5" y="303.5" width="40" height="80"/>
+                                <rect key="frame" x="147.5" y="263.5" width="80" height="160"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="MTh-Lu-1Pg"/>
-                                    <constraint firstAttribute="height" constant="80" id="XkX-Cb-Nuk"/>
+                                    <constraint firstAttribute="width" constant="80" id="MTh-Lu-1Pg"/>
+                                    <constraint firstAttribute="height" constant="160" id="XkX-Cb-Nuk"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="p36-l2-fx7" firstAttribute="top" secondItem="jt6-7i-74a" secondAttribute="top" constant="83" id="9ht-7Z-t1d"/>
                             <constraint firstItem="aMs-Up-0jQ" firstAttribute="centerY" secondItem="jt6-7i-74a" secondAttribute="centerY" id="FIm-ed-uIR"/>
+                            <constraint firstItem="p36-l2-fx7" firstAttribute="width" secondItem="Wmr-3z-MFV" secondAttribute="width" id="vtN-nM-4Qh"/>
                             <constraint firstItem="aMs-Up-0jQ" firstAttribute="centerX" secondItem="jt6-7i-74a" secondAttribute="centerX" id="zNN-tp-L0m"/>
+                            <constraint firstItem="p36-l2-fx7" firstAttribute="centerX" secondItem="jt6-7i-74a" secondAttribute="centerX" id="znJ-0U-E8O"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jt6-7i-74a"/>
                     </view>
+                    <connections>
+                        <outlet property="statusLabel" destination="p36-l2-fx7" id="ziS-1w-y9o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCv-Xn-266" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

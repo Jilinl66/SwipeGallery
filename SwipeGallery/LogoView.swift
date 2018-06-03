@@ -24,12 +24,20 @@ class LogoView: UIView {
         let gradient = CGGradient(colorsSpace: nil, colors: [gradientColor.cgColor, gradientColor2.cgColor] as CFArray, locations: [0, 1])!
         
         let rectPath = UIBezierPath(rect: CGRect(x: lineWidth / 2, y: lineWidth / 2, width: bounds.width - lineWidth, height: bounds.height -  lineWidth))
-        context?.saveGState()
-        rectPath.addClip()
+//        context?.saveGState()
+//        rectPath.addClip()
         context?.drawLinearGradient(gradient, start: CGPoint(x: 0, y: 0), end: CGPoint(x: 0, y: bounds.height), options: [])
-        context?.restoreGState()
+//        context?.restoreGState()
         color.setStroke()
         rectPath.lineWidth = lineWidth
         rectPath.stroke()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
     }
 }
