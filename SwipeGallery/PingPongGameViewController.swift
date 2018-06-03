@@ -11,7 +11,6 @@ import UIKit
 class PingPongGameViewController: UIViewController {
 
     @IBOutlet weak var boardView: UIView!
-    
     @IBOutlet weak var robotScoreLabel: UILabel!
     @IBOutlet weak var myScoreLabel: UILabel!
     
@@ -19,10 +18,7 @@ class PingPongGameViewController: UIViewController {
     var paddleRight: PaddleView!
     var ballView: UIView!
     
-    struct Constants {
-        static let margin: CGFloat = 10.0
-    }
-    
+    let margin: CGFloat = 10.0
     let paddleWidth: CGFloat = 10.0
     let paddleHeight: CGFloat = 60.0
     var velocity = CGPoint(x: 10, y: 10)
@@ -60,9 +56,9 @@ class PingPongGameViewController: UIViewController {
     }
     
     private func drawPaddle() {
-        paddleLeft = PaddleView(frame: CGRect(x: Constants.margin, y: boardView.bounds.height / 2 - paddleHeight / 2, width: paddleWidth, height: paddleHeight))
+        paddleLeft = PaddleView(frame: CGRect(x: margin, y: boardView.bounds.height / 2 - paddleHeight / 2, width: paddleWidth, height: paddleHeight))
         boardView.addSubview(paddleLeft)
-        paddleRight = PaddleView(frame: CGRect(x: boardView.bounds.width - paddleWidth - Constants.margin, y: boardView.bounds.height / 2 - paddleHeight / 2, width: paddleWidth, height: paddleHeight))
+        paddleRight = PaddleView(frame: CGRect(x: boardView.bounds.width - paddleWidth - margin, y: boardView.bounds.height / 2 - paddleHeight / 2, width: paddleWidth, height: paddleHeight))
         boardView.addSubview(paddleRight)
     }
     
@@ -144,6 +140,7 @@ class PingPongGameViewController: UIViewController {
         }
     }
     
+    // Detect goal
     private func detectGoal() {
         if ballView.frame.minX < 0 {
             scoreRight += 1
@@ -154,6 +151,7 @@ class PingPongGameViewController: UIViewController {
         }
     }
     
+    // Reset to intial location
     private func kickOff() {
         pause = true
         ballView.center = CGPoint(x: boardView.bounds.midX, y: boardView.bounds.midY)
