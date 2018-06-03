@@ -13,12 +13,15 @@ class PingPongGameViewController: UIViewController {
     @IBOutlet weak var boardView: UIView!
     
     struct Constants {
-        static let paddleWidth: CGFloat = 10.0
-        static let paddleHeight: CGFloat = 60.0
         static let margin: CGFloat = 10.0
-        static let velocity: CGPoint = CGPoint(x: 10, y: 10)
     }
     
+    let paddleWidth: CGFloat = 10.0
+    let paddleHeight: CGFloat = 60.0
+    var velocity = CGPoint(x: -10, y: 10)
+    var topBottomThreshold: CGFloat {
+        return abs(velocity.y)
+    }
     var paddleLeft: PaddleView!
     var paddleRight: PaddleView!
     
@@ -41,9 +44,9 @@ class PingPongGameViewController: UIViewController {
     }
     
     private func drawPaddle() {
-        paddleLeft = PaddleView(frame: CGRect(x: Constants.margin, y: Constants.margin, width: Constants.paddleWidth, height: Constants.paddleHeight))
+        paddleLeft = PaddleView(frame: CGRect(x: Constants.margin, y: boardView.bounds.height / 2 - paddleHeight / 2, width: paddleWidth, height: paddleHeight))
         boardView.addSubview(paddleLeft)
-        paddleRight = PaddleView(frame: CGRect(x: boardView.bounds.width - Constants.paddleWidth - Constants.margin, y: Constants.margin, width: Constants.paddleWidth, height: Constants.paddleHeight))
+        paddleRight = PaddleView(frame: CGRect(x: boardView.bounds.width - paddleWidth - Constants.margin, y: boardView.bounds.height / 2 - paddleHeight / 2, width: paddleWidth, height: paddleHeight))
         boardView.addSubview(paddleRight)
     }
     
@@ -81,7 +84,7 @@ class PingPongGameViewController: UIViewController {
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
         let location = touch.location(in: boardView)
-        if location.y < Constants.paddleHeight / 2 || location.y > boardView.bounds.height - Constants.paddleHeight / 2 {
+        if location.y < paddleHeight / 2 || location.y > boardView.bounds.height - paddleHeight / 2 {
             return
         }
         paddleRight.center = CGPoint(x: paddleRight.center.x, y: location.y)
@@ -91,21 +94,46 @@ class PingPongGameViewController: UIViewController {
         if pause {
             return
         }
-        ballView.center = CGPoint(x: ballView.center.x + Constants.velocity.x, y: ballView.center.y + Constants.velocity.y)
+        ballView.center = CGPoint(x: ballView.center.x + velocity.x, y: ballView.center.y + velocity.y)
+        
         detectGoal()
+        
+        //Bounce off of top and bottom walls
+        if ballView.frame.minY < topBottomThreshold || ballView.frame.maxY > boardView.bounds.maxY - topBottomThreshold {
+            velocity.y = -velocity.y
+        }
+        
+        // Bounce off of left paddle
+        if ballView.frame.maxY > paddleLeft.frame.minY && ballView.frame.minY < paddleLeft.frame.maxY && ballView.frame.minX < paddleLeft.frame.maxX {
+            velocity.x = -velocity.x
+        }
+        
+        // Bounce off of right paddle
+        if ballView.frame.maxY > paddleRight.frame.minY && ballView.frame.minY < paddleRight.frame.maxY && ballView.frame.maxX > paddleRight.frame.minX {
+            velocity.x = -velocity.x
+        }
+        
+        // Move robot
+        if velocity.x < 0 {
+            let newCenterY = paddleLeft.center.y + velocity.y
+            if newCenterY >= paddleHeight / 2 && newCenterY <= boardView.bounds.height - paddleHeight / 2 {
+                paddleLeft.center = CGPoint(x: paddleLeft.center.x, y: newCenterY)
+            }
+        }
     }
     
     private func detectGoal() {
-        if ballView.center.x < 5 {
+        if ballView.frame.minX < 0 {
             scoreRight += 1
             kickOff()
-        } else if ballView.center.x > boardView.bounds.width - 5 {
+        } else if ballView.frame.maxX > boardView.bounds.width {
             scoreLeft += 1
             kickOff()
         }
     }
     
     private func kickOff() {
-        
+        pause = true
+        ballView.center = CGPoint(x: boardView.bounds.midX, y: boardView.bounds.midY)
     }
 }
