@@ -54,6 +54,8 @@ class PingPongGameViewController: UIViewController {
         }
         drawPaddle()
         drawBall()
+        drawDashLine()
+    
         Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(play), userInfo: nil, repeats: true)
     }
     
@@ -88,6 +90,12 @@ class PingPongGameViewController: UIViewController {
         
         //Add ballview to parent view
         boardView.addSubview(ballView)
+    }
+    
+    private func drawDashLine() {
+        let lineWidth: CGFloat = 2.0
+        let dashLine = PongDashLine(frame: CGRect(x: boardView.bounds.midX - lineWidth / 2, y: 0.0, width: lineWidth, height: boardView.bounds.height))
+        boardView.addSubview(dashLine)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
