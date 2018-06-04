@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol LogoTraceDelegate {
+    func logoTraceComplete()
+}
+
 @IBDesignable
 class LogoView: UIView {
     
@@ -15,6 +19,8 @@ class LogoView: UIView {
     var percentage: CGFloat = 0.0
     
     var traceCompleted = false
+    
+    var delegate: LogoTraceDelegate?
     
     override func draw(_ rect: CGRect) {
         
@@ -48,6 +54,7 @@ class LogoView: UIView {
         updateDrawing()
         if percentage >= 1 {
             traceCompleted = true
+            delegate?.logoTraceComplete()
         }
     }
     

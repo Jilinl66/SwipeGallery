@@ -8,14 +8,18 @@
 
 import UIKit
 
-class TaceInteractivePageViewController: UIViewController {
+class TaceInteractivePageViewController: UIViewController, LogoTraceDelegate {
     
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var logoView: LogoView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        logoView.delegate = self
     }
 
+    func logoTraceComplete() {
+        statusLabel.text = "Trace Complete"
+    }
+    
 }

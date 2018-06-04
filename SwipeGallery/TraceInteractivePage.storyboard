@@ -44,6 +44,7 @@
                         <viewLayoutGuide key="safeArea" id="jt6-7i-74a"/>
                     </view>
                     <connections>
+                        <outlet property="logoView" destination="aMs-Up-0jQ" id="d2L-ZJ-IVH"/>
                         <outlet property="statusLabel" destination="p36-l2-fx7" id="ziS-1w-y9o"/>
                     </connections>
                 </viewController>
