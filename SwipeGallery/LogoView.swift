@@ -12,6 +12,9 @@ import UIKit
 class LogoView: UIView {
     
     let lineWidth: CGFloat = 1.0
+    var percentage: CGFloat = 0.0
+    
+    var traceCompleted = false
     
     override func draw(_ rect: CGRect) {
         
@@ -26,18 +29,36 @@ class LogoView: UIView {
         let rectPath = UIBezierPath(rect: CGRect(x: lineWidth / 2, y: lineWidth / 2, width: bounds.width - lineWidth, height: bounds.height -  lineWidth))
 //        context?.saveGState()
 //        rectPath.addClip()
-        context?.drawLinearGradient(gradient, start: CGPoint(x: 0, y: 0), end: CGPoint(x: 0, y: bounds.height), options: [])
+        context?.drawLinearGradient(gradient, start: CGPoint(x: 0, y: 0), end: CGPoint(x: 0, y: percentage *  bounds.height), options: [])
 //        context?.restoreGState()
         color.setStroke()
         rectPath.lineWidth = lineWidth
         rectPath.stroke()
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let location = touches.first?.location(in: self) {
+            percentage = location.y / self.frame.size.height
+            print(location.y, self.frame.size.height)
+            updateDrawing()
+        }
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        updateDrawing()
+        if percentage >= 1 {
+            traceCompleted = true
+        }
+    }
+    
+    private func updateDrawing() {
+        if !traceCompleted {
+            if percentage < 0  {
+                percentage = 0
+            } else if percentage > 1 {
+                percentage = 1
+            }
+            self.setNeedsDisplay()
+        }
     }
 }
