@@ -21,7 +21,7 @@ class LogoView: UIView {
     }
     
     // Add line width if needed
-    let lineWidth: CGFloat = 0.0
+    let lineWidth: CGFloat = 1.0
     var percentage: CGFloat = 1.0
     
     var traceCompleted = false
@@ -64,8 +64,11 @@ class LogoView: UIView {
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let location = touches.first?.location(in: self) {
-            percentage = location.y / self.frame.size.height
-            print(location.y, self.frame.size.height)
+            if orientation == .portait {
+                percentage = location.y / self.frame.size.height
+            } else {
+                percentage = location.x / self.frame.size.width
+            }
             updateDrawing()
         }
     }

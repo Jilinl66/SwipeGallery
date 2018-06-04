@@ -11,11 +11,15 @@ import UIKit
 class TaceInteractivePageViewController: UIViewController, LogoTraceDelegate {
     
     @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var logoView: LogoView!
+    @IBOutlet weak var logoViewPath1: LogoView!
+    @IBOutlet weak var logoViewPath2: LogoView!
+    @IBOutlet weak var logoViewPath3: LogoView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        logoView.delegate = self
+        logoViewPath1.delegate = self
+        logoViewPath2.delegate = self
+        logoViewPath3.delegate = self
     }
 
     func logoTraceComplete() {
