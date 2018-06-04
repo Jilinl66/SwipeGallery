@@ -15,6 +15,8 @@ class TaceInteractivePageViewController: UIViewController, LogoTraceDelegate {
     @IBOutlet weak var logoViewPath2: LogoView!
     @IBOutlet weak var logoViewPath3: LogoView!
     
+    var count = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         logoViewPath1.delegate = self
@@ -23,7 +25,11 @@ class TaceInteractivePageViewController: UIViewController, LogoTraceDelegate {
     }
 
     func logoTraceComplete() {
-        statusLabel.text = "Trace Complete"
+        count += 1
+        if count == 3 {
+            DispatchQueue.main.async {
+                self.statusLabel.text = "Trace Complete"
+            }
+        }
     }
-    
 }

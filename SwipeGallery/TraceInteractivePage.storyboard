@@ -26,22 +26,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wfe-XP-VsF">
                                 <rect key="frame" x="47" y="243.5" width="280" height="200"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aMs-Up-0jQ" userLabel="Logo View Step 1" customClass="LogoView" customModule="SwipeGallery" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="60" height="200"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="MTh-Lu-1Pg"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="orientation" value="NO"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="orientationRawValue">
-                                                <integer key="value" value="0"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYt-pZ-Uji" userLabel="Logo View Step 2" customClass="LogoView" customModule="SwipeGallery" customModuleProvider="target">
                                         <rect key="frame" x="60" y="40" width="220" height="60"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.84936151649746194" green="0.84936151649746194" blue="0.84936151649746194" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="UlC-Qn-u4c"/>
                                         </constraints>
@@ -53,13 +40,25 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bno-vf-P30" userLabel="Logo View Step 3" customClass="LogoView" customModule="SwipeGallery" customModuleProvider="target">
                                         <rect key="frame" x="220" y="100" width="60" height="100"/>
-                                        <color key="backgroundColor" red="0.76630580455518615" green="0.76630580455518615" blue="0.76630580455518615" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.84936151649746194" green="0.84936151649746194" blue="0.84936151649746194" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="w5S-a2-uwg"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aMs-Up-0jQ" userLabel="Logo View Step 1" customClass="LogoView" customModule="SwipeGallery" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="200"/>
+                                        <color key="backgroundColor" red="0.84936151649746194" green="0.84936151649746194" blue="0.84936151649746194" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="MTh-Lu-1Pg"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="QbO-aK-4hY"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="orientationRawValue">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="aMs-Up-0jQ" firstAttribute="leading" secondItem="Wfe-XP-VsF" secondAttribute="leading" id="FUZ-dR-gVy"/>
                                     <constraint firstItem="aMs-Up-0jQ" firstAttribute="height" secondItem="Wfe-XP-VsF" secondAttribute="height" id="GDO-XL-s8k"/>

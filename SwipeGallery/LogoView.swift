@@ -20,9 +20,9 @@ class LogoView: UIView {
         case landscape
     }
     
-    // Add line width if needed
-    let lineWidth: CGFloat = 1.0
-    var percentage: CGFloat = 1.0
+    // Change line width if needed
+    let lineWidth: CGFloat = 0.0
+    var percentage: CGFloat = 0.0
     
     var traceCompleted = false
     
@@ -49,14 +49,17 @@ class LogoView: UIView {
         let gradient = CGGradient(colorsSpace: nil, colors: [gradientColor.cgColor, gradientColor2.cgColor] as CFArray, locations: [0, 1])!
         
         let rectPath = UIBezierPath(rect: CGRect(x: lineWidth / 2, y: lineWidth / 2, width: bounds.width - lineWidth, height: bounds.height -  lineWidth))
-//        context?.saveGState()
-//        rectPath.addClip()
+        context?.saveGState()
+        rectPath.addClip()
+        
+        // Draw line gradient
         if orientation == .portait {
-            context?.drawLinearGradient(gradient, start: CGPoint(x: bounds.width / 2, y: 0), end: CGPoint(x: bounds.width / 2, y: percentage *  bounds.height), options: [])
+            context?.drawLinearGradient(gradient, start: CGPoint(x: 0, y: 0), end: CGPoint(x: 0, y: percentage * bounds.height), options: [])
         } else {
-            context?.drawLinearGradient(gradient, start: CGPoint(x: lineWidth / 2, y: bounds.height / 2), end: CGPoint(x: percentage * bounds.width, y: bounds.height / 2), options: [])
+            context?.drawLinearGradient(gradient, start: CGPoint(x: lineWidth / 2, y: 0), end: CGPoint(x: percentage * bounds.width, y: 0), options: [])
         }
-//        context?.restoreGState()
+        
+        context?.restoreGState()
         color.setStroke()
         rectPath.lineWidth = lineWidth
         rectPath.stroke()
@@ -78,6 +81,7 @@ class LogoView: UIView {
         if percentage >= 1 {
             traceCompleted = true
             delegate?.logoTraceComplete()
+            delegate = nil
         }
     }
     
