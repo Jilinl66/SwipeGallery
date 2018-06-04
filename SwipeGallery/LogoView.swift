@@ -15,12 +15,27 @@ protocol LogoTraceDelegate {
 @IBDesignable
 class LogoView: UIView {
     
+    enum Orientation: Int {
+        case portait
+        case landscape
+    }
+    
     let lineWidth: CGFloat = 1.0
     var percentage: CGFloat = 0.0
     
     var traceCompleted = false
     
     var delegate: LogoTraceDelegate?
+    
+    var orientation: Orientation = .portait
+    @IBInspectable var orientationRawValue: Int {
+        get {
+            return orientation.rawValue
+        }
+        set {
+            orientation = Orientation(rawValue: newValue) ?? .portait
+        }
+    }
     
     override func draw(_ rect: CGRect) {
         
