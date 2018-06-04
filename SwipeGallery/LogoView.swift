@@ -20,8 +20,9 @@ class LogoView: UIView {
         case landscape
     }
     
-    let lineWidth: CGFloat = 1.0
-    var percentage: CGFloat = 0.0
+    // Add line width if needed
+    let lineWidth: CGFloat = 0.0
+    var percentage: CGFloat = 1.0
     
     var traceCompleted = false
     
@@ -50,7 +51,11 @@ class LogoView: UIView {
         let rectPath = UIBezierPath(rect: CGRect(x: lineWidth / 2, y: lineWidth / 2, width: bounds.width - lineWidth, height: bounds.height -  lineWidth))
 //        context?.saveGState()
 //        rectPath.addClip()
-        context?.drawLinearGradient(gradient, start: CGPoint(x: 0, y: 0), end: CGPoint(x: 0, y: percentage *  bounds.height), options: [])
+        if orientation == .portait {
+            context?.drawLinearGradient(gradient, start: CGPoint(x: bounds.width / 2, y: 0), end: CGPoint(x: bounds.width / 2, y: percentage *  bounds.height), options: [])
+        } else {
+            context?.drawLinearGradient(gradient, start: CGPoint(x: lineWidth / 2, y: bounds.height / 2), end: CGPoint(x: percentage * bounds.width, y: bounds.height / 2), options: [])
+        }
 //        context?.restoreGState()
         color.setStroke()
         rectPath.lineWidth = lineWidth
