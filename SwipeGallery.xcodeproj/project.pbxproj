@@ -33,6 +33,7 @@
 		44F27C7520C65D810071D563 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 44F27C7320C65D810071D563 /* Data.xcdatamodeld */; };
 		44F27C7720C716030071D563 /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F27C7620C716030071D563 /* PlayingCard.swift */; };
 		44F27C7920C73D8D0071D563 /* PlayingCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F27C7820C73D8D0071D563 /* PlayingCardDeck.swift */; };
+		44F27C7D20C747A60071D563 /* Type+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F27C7C20C747A60071D563 /* Type+Extension.swift */; };
 		44FC979320C0AFBB00EA1A89 /* DesignablePlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC979220C0AFBB00EA1A89 /* DesignablePlusButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		44F27C7420C65D810071D563 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 		44F27C7620C716030071D563 /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
 		44F27C7820C73D8D0071D563 /* PlayingCardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardDeck.swift; sourceTree = "<group>"; };
+		44F27C7C20C747A60071D563 /* Type+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Type+Extension.swift"; sourceTree = "<group>"; };
 		44FC979220C0AFBB00EA1A89 /* DesignablePlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignablePlusButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -221,6 +223,7 @@
 		44D2895320BF2DC9003D3BD6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				44F27C7B20C747880071D563 /* Extension */,
 				44205AEA20BE75A900431637 /* Log.swift */,
 				4419B8C520C20B6E00572940 /* Line.swift */,
 				44F27C7A20C73D920071D563 /* PlayingCard */,
@@ -243,6 +246,14 @@
 				44F27C7820C73D8D0071D563 /* PlayingCardDeck.swift */,
 			);
 			name = PlayingCard;
+			sourceTree = "<group>";
+		};
+		44F27C7B20C747880071D563 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				44F27C7C20C747A60071D563 /* Type+Extension.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 		44FC979120C0AF8C00EA1A89 /* CustomizedView */ = {
@@ -421,6 +432,7 @@
 				4419B8C820C25A3E00572940 /* DrawPageViewController.swift in Sources */,
 				44F27C7920C73D8D0071D563 /* PlayingCardDeck.swift in Sources */,
 				44F27C7520C65D810071D563 /* Data.xcdatamodeld in Sources */,
+				44F27C7D20C747A60071D563 /* Type+Extension.swift in Sources */,
 				44205ABC20BE33BC00431637 /* AppDelegate.swift in Sources */,
 				4419B8C120C2050B00572940 /* DrawView.swift in Sources */,
 				4457272320C3BB4F0056A7B6 /* PongDashLine.swift in Sources */,
