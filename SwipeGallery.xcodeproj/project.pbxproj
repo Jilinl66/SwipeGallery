@@ -34,6 +34,8 @@
 		44F27C7720C716030071D563 /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F27C7620C716030071D563 /* PlayingCard.swift */; };
 		44F27C7920C73D8D0071D563 /* PlayingCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F27C7820C73D8D0071D563 /* PlayingCardDeck.swift */; };
 		44F27C7D20C747A60071D563 /* Type+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F27C7C20C747A60071D563 /* Type+Extension.swift */; };
+		44F27C8120C74A620071D563 /* PlayingCard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44F27C8020C74A620071D563 /* PlayingCard.storyboard */; };
+		44F27C8320C74A820071D563 /* PlayingCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F27C8220C74A820071D563 /* PlayingCardViewController.swift */; };
 		44FC979320C0AFBB00EA1A89 /* DesignablePlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC979220C0AFBB00EA1A89 /* DesignablePlusButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +90,8 @@
 		44F27C7620C716030071D563 /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
 		44F27C7820C73D8D0071D563 /* PlayingCardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardDeck.swift; sourceTree = "<group>"; };
 		44F27C7C20C747A60071D563 /* Type+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Type+Extension.swift"; sourceTree = "<group>"; };
+		44F27C8020C74A620071D563 /* PlayingCard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayingCard.storyboard; sourceTree = "<group>"; };
+		44F27C8220C74A820071D563 /* PlayingCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardViewController.swift; sourceTree = "<group>"; };
 		44FC979220C0AFBB00EA1A89 /* DesignablePlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignablePlusButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,7 +121,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4408B2B320BF2F06009174D0 /* Other Files */ = {
+		4408B2B320BF2F06009174D0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				44205ABB20BE33BC00431637 /* AppDelegate.swift */,
@@ -125,12 +129,13 @@
 				44205AC420BE33BE00431637 /* LaunchScreen.storyboard */,
 				44205AC720BE33BE00431637 /* Info.plist */,
 			);
-			name = "Other Files";
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		4419B8C420C2055A00572940 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				44F27C7F20C74A490071D563 /* PlayingCard */,
 				44205ABF20BE33BC00431637 /* SwipeImages.storyboard */,
 				4419B8C220C2055300572940 /* DrawPage.storyboard */,
 				4457272020C319560056A7B6 /* PingPong.storyboard */,
@@ -169,7 +174,7 @@
 				44D2895320BF2DC9003D3BD6 /* Model */,
 				44D2895220BF2DC1003D3BD6 /* VIew */,
 				44D2895120BF2DB4003D3BD6 /* Controller */,
-				4408B2B320BF2F06009174D0 /* Other Files */,
+				4408B2B320BF2F06009174D0 /* Supporting Files */,
 			);
 			path = SwipeGallery;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 		44D2895120BF2DB4003D3BD6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				44F27C7E20C74A2A0071D563 /* PlayingCard */,
 				44205ABD20BE33BC00431637 /* SwipeImagesViewController.swift */,
 				4419B8C720C25A3E00572940 /* DrawPageViewController.swift */,
 				4419B8CD20C27A8500572940 /* PingPongGameViewController.swift */,
@@ -223,10 +229,10 @@
 		44D2895320BF2DC9003D3BD6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				44F27C7A20C73D920071D563 /* PlayingCard */,
 				44F27C7B20C747880071D563 /* Extension */,
 				44205AEA20BE75A900431637 /* Log.swift */,
 				4419B8C520C20B6E00572940 /* Line.swift */,
-				44F27C7A20C73D920071D563 /* PlayingCard */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -254,6 +260,22 @@
 				44F27C7C20C747A60071D563 /* Type+Extension.swift */,
 			);
 			name = Extension;
+			sourceTree = "<group>";
+		};
+		44F27C7E20C74A2A0071D563 /* PlayingCard */ = {
+			isa = PBXGroup;
+			children = (
+				44F27C8220C74A820071D563 /* PlayingCardViewController.swift */,
+			);
+			name = PlayingCard;
+			sourceTree = "<group>";
+		};
+		44F27C7F20C74A490071D563 /* PlayingCard */ = {
+			isa = PBXGroup;
+			children = (
+				44F27C8020C74A620071D563 /* PlayingCard.storyboard */,
+			);
+			name = PlayingCard;
 			sourceTree = "<group>";
 		};
 		44FC979120C0AF8C00EA1A89 /* CustomizedView */ = {
@@ -378,6 +400,7 @@
 				4457272120C319560056A7B6 /* PingPong.storyboard in Resources */,
 				4419B8C320C2055300572940 /* DrawPage.storyboard in Resources */,
 				44205AC620BE33BE00431637 /* LaunchScreen.storyboard in Resources */,
+				44F27C8120C74A620071D563 /* PlayingCard.storyboard in Resources */,
 				44205AC320BE33BE00431637 /* Assets.xcassets in Resources */,
 				44205AED20BE790100431637 /* README.md in Resources */,
 				44205AC120BE33BC00431637 /* SwipeImages.storyboard in Resources */,
@@ -426,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4419B8CA20C2798B00572940 /* PaddleView.swift in Sources */,
+				44F27C8320C74A820071D563 /* PlayingCardViewController.swift in Sources */,
 				441E3BAB20C4975F00640125 /* LogoView.swift in Sources */,
 				44F27C3420C4B7800071D563 /* TaceInteractivePageViewController.swift in Sources */,
 				44205ABE20BE33BC00431637 /* SwipeImagesViewController.swift in Sources */,
