@@ -12,8 +12,8 @@ import UIKit
 class PlayingCardView: UIView {
     
     var suit: String = "❤️"
-    var rank: Int = 12
-    var isFaceUp = false
+    var rank: Int = 11
+    var isFaceUp = true
     
     // Create attributed string and center it
     func centeredAttributedString(_ string: String, fontSize: CGFloat) -> NSAttributedString {
@@ -70,13 +70,14 @@ class PlayingCardView: UIView {
         path.fill()
         
         if isFaceUp {
-            if let faceCardImage = UIImage(named: rankString+suit) {
+            // Need to add bundle and compatibleWith in order to show in interface builder
+            if let faceCardImage = UIImage(named: rankString+suit, in: Bundle(for: self.classForCoder), compatibleWith: traitCollection) {
                 faceCardImage.draw(in: bounds.zoom(by: SizeRatio.faceCardImageSizeToBoundsHeight))
             } else {
                 drawPips()
             }
         } else {
-            if let cardBackImage = UIImage(named: "cardback") {
+            if let cardBackImage = UIImage(named: "cardback", in: Bundle(for: self.classForCoder), compatibleWith: traitCollection) {
                 cardBackImage.draw(in: bounds)
             }
         }
