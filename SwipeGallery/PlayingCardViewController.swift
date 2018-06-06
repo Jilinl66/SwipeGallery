@@ -27,6 +27,14 @@ class PlayingCardViewController: UIViewController {
         }
     }
     
+    @IBAction func flipCard(_ sender: UITapGestureRecognizer) {
+        switch sender.state {
+        case .ended:
+            playingCardView.isFaceUp = !playingCardView.isFaceUp
+        default: break
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
