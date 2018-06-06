@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dWN-NF-vlO">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Playing Card View Controller-->
+        <scene sceneID="oL1-Sj-oCy">
+            <objects>
+                <viewController id="dWN-NF-vlO" customClass="PlayingCardViewController" customModule="SwipeGallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dfh-u8-I7P">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fi1-SB-Vg9" customClass="PlayingCardView" customModule="SwipeGallery" customModuleProvider="target">
+                                <rect key="frame" x="226.5" y="16" width="214" height="343"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="750" constant="1000" id="Wi6-ec-AIL"/>
+                                    <constraint firstAttribute="width" secondItem="fi1-SB-Vg9" secondAttribute="height" multiplier="5:8" id="usf-pu-Qw7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.87623684719999995" blue="0.72930021229999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="fi1-SB-Vg9" firstAttribute="centerX" secondItem="je9-oF-AC8" secondAttribute="centerX" id="4xJ-tW-acb"/>
+                            <constraint firstItem="je9-oF-AC8" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fi1-SB-Vg9" secondAttribute="bottom" constant="16" id="B7c-5I-kVL"/>
+                            <constraint firstItem="fi1-SB-Vg9" firstAttribute="centerY" secondItem="je9-oF-AC8" secondAttribute="centerY" id="I3g-na-QXo"/>
+                            <constraint firstItem="fi1-SB-Vg9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="je9-oF-AC8" secondAttribute="leading" constant="16" id="Ica-3D-is5"/>
+                            <constraint firstItem="je9-oF-AC8" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fi1-SB-Vg9" secondAttribute="trailing" constant="16" id="wEf-zy-iEh"/>
+                            <constraint firstItem="fi1-SB-Vg9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="je9-oF-AC8" secondAttribute="top" constant="16" id="yEn-S3-mgP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="je9-oF-AC8"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ycn-a0-O5D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-198" y="148"/>
+        </scene>
+    </scenes>
+</document>
