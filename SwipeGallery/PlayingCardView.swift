@@ -12,7 +12,7 @@ import UIKit
 class PlayingCardView: UIView {
     
     var suit: String = "❤️"
-    var rank: Int = 2
+    var rank: Int = 12
     var isFaceUp = true
     
     // Create attributed string and center it
@@ -68,11 +68,18 @@ class PlayingCardView: UIView {
         let path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height), cornerRadius: cornerRadius)
         UIColor.white.setFill()
         path.fill()
+        
+        if let faceImage = UIImage(named: rankString+suit) {
+            
+        } else {
+            drawPips()
+        }
     }
     
     private func drawPips() {
         let pipsPerRowForRank = [[0], [1], [1, 1], [1, 1, 1], [2, 2], [2, 1, 2], [2, 2, 2], [2, 1, 2, 2], [2, 2, 2, 2], [2, 2, 1, 2, 2], [2, 2, 2, 2, 2]]
         
+        // Cool embeded function
         func createPipString(thatFit pipRect: CGRect) -> NSAttributedString {
             let maxVerticalPipCount = CGFloat(pipsPerRowForRank.reduce(0) { max($1.count, $0) })
             let maxHorizontalPipCount = CGFloat(pipsPerRowForRank.reduce(0) { max($1.max() ?? 0, $0) })
@@ -88,7 +95,24 @@ class PlayingCardView: UIView {
             }
         }
         
-        
+        if pipsPerRowForRank.indices.contains(rank) {
+            let pipsPerRow = pipsPerRowForRank[rank]
+            var pipRect = bounds.insetBy(dx: cornerOffset, dy: cornerOffset).insetBy(dx: cornerString.size().width, dy: cornerString.size().height / 2)
+            let pipString = createPipString(thatFit: pipRect)
+            let pipRowSpacing = pipRect.size.height / CGFloat(pipsPerRow.count)
+            pipRect.size.height = pipString.size().height
+            pipRect.origin.y += (pipRowSpacing - pipRect.size.height) / 2
+            for pipCount in pipsPerRow {
+                switch pipCount {
+                case 1: pipString.draw(in: pipRect)
+                case 2:
+                    pipString.draw(in: pipRect.leftHalf)
+                    pipString.draw(in: pipRect.rightHalf)
+                default: break
+                }
+                pipRect.origin.y += pipRowSpacing
+            }
+        }
     }
 }
 
@@ -119,4 +143,17 @@ extension PlayingCardView {
         default: return "?"
         }
     }
+}
+
+extension CGRect {
+    var leftHalf: CGRect {
+        return CGRect(x: minX, y: minY, width: width / 2, height: height)
+    }
+    var rightHalf: CGRect {
+        return CGRect(x: midX, y: minY, width: width / 2, height: height)
+    }
+}
+
+extension CGPoint {
+    
 }
