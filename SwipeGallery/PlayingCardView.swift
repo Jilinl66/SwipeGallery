@@ -12,7 +12,7 @@ import UIKit
 class PlayingCardView: UIView {
     
     var suit: String = "❤️"
-    var rank: Int = 12
+    var rank: Int = 7
     var isFaceUp = true
     
     // Create attributed string and center it
