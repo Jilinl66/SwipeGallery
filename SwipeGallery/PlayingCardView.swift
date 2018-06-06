@@ -11,9 +11,20 @@ import UIKit
 @IBDesignable
 class PlayingCardView: UIView {
     
-    var suit: String = "❤️"
-    var rank: Int = 11
-    var isFaceUp = true
+    // Set need display to redraw, set need layout to layout code added components
+    var suit: String = "❤️" { didSet { setNeedsDisplay(); setNeedsLayout() } }
+    var rank: Int = 11 { didSet { setNeedsDisplay(); setNeedsLayout() } }
+    var isFaceUp = true { didSet { setNeedsDisplay(); setNeedsLayout() } }
+    var faceCardScale = SizeRatio.faceCardImageSizeToBoundsHeight { didSet { setNeedsDisplay() } }
+    
+    @objc func adjustFaceCardScale(byHandlingGestureRecognizerBy recognizer: UIPinchGestureRecognizer) {
+        switch recognizer.state {
+        case .changed, .ended:
+            faceCardScale *= recognizer.scale
+            recognizer.scale = 1.0
+        default: break
+        }
+    }
     
     // Create attributed string and center it
     func centeredAttributedString(_ string: String, fontSize: CGFloat) -> NSAttributedString {
@@ -39,6 +50,7 @@ class PlayingCardView: UIView {
         return label
     }
     
+    // Set string and font size, and visibility for label
     private func configureCornerLabel(_ label: UILabel) {
         label.attributedText = cornerString
         label.frame.size = CGSize.zero
@@ -54,7 +66,7 @@ class PlayingCardView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+        // Configure and layout corner labels
         configureCornerLabel(upperLeftCornerLabel)
         upperLeftCornerLabel.frame.origin = CGPoint(x: bounds.minX + cornerOffset, y: bounds.minY + cornerOffset)
         
@@ -72,7 +84,7 @@ class PlayingCardView: UIView {
         if isFaceUp {
             // Need to add bundle and compatibleWith in order to show in interface builder
             if let faceCardImage = UIImage(named: rankString+suit, in: Bundle(for: self.classForCoder), compatibleWith: traitCollection) {
-                faceCardImage.draw(in: bounds.zoom(by: SizeRatio.faceCardImageSizeToBoundsHeight))
+                faceCardImage.draw(in: bounds.zoom(by: faceCardScale))
             } else {
                 drawPips()
             }
@@ -84,6 +96,7 @@ class PlayingCardView: UIView {
     }
     
     private func drawPips() {
+        // Data driven
         let pipsPerRowForRank = [[0], [1], [1, 1], [1, 1, 1], [2, 2], [2, 1, 2], [2, 2, 2], [2, 1, 2, 2], [2, 2, 2, 2], [2, 2, 1, 2, 2], [2, 2, 2, 2, 2]]
         
         // Cool embeded function
@@ -123,6 +136,7 @@ class PlayingCardView: UIView {
     }
 }
 
+// Handle constants
 extension PlayingCardView {
     private struct SizeRatio {
         static let cornerFontSizeToBoundsHeight: CGFloat = 0.085
@@ -152,6 +166,7 @@ extension PlayingCardView {
     }
 }
 
+// Useful extensions
 extension CGRect {
     var leftHalf: CGRect {
         return CGRect(x: minX, y: minY, width: width / 2, height: height)
