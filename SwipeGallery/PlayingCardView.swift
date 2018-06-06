@@ -63,10 +63,32 @@ class PlayingCardView: UIView {
         lowerRightCornerLabel.frame.origin = CGPoint(x: bounds.maxX - cornerOffset - lowerRightCornerLabel.frame.size.width, y: bounds.maxY - cornerOffset - lowerRightCornerLabel.frame.size.height)
     }
     
+    // Draw card background
     override func draw(_ rect: CGRect) {
         let path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height), cornerRadius: cornerRadius)
         UIColor.white.setFill()
         path.fill()
+    }
+    
+    private func drawPips() {
+        let pipsPerRowForRank = [[0], [1], [1, 1], [1, 1, 1], [2, 2], [2, 1, 2], [2, 2, 2], [2, 1, 2, 2], [2, 2, 2, 2], [2, 2, 1, 2, 2], [2, 2, 2, 2, 2]]
+        
+        func createPipString(thatFit pipRect: CGRect) -> NSAttributedString {
+            let maxVerticalPipCount = CGFloat(pipsPerRowForRank.reduce(0) { max($1.count, $0) })
+            let maxHorizontalPipCount = CGFloat(pipsPerRowForRank.reduce(0) { max($1.max() ?? 0, $0) })
+            
+            let verticalPipRowSpace = pipRect.height / maxVerticalPipCount
+            let attempPipString =  centeredAttributedString(suit, fontSize: verticalPipRowSpace)
+            let probablyOkayStringFontSize = verticalPipRowSpace / (attempPipString.size().height / verticalPipRowSpace)
+            let probabalyOkayString = centeredAttributedString(suit, fontSize: probablyOkayStringFontSize)
+            if probabalyOkayString.size().width > pipRect.width / maxHorizontalPipCount {
+                return centeredAttributedString(suit, fontSize: probablyOkayStringFontSize / (probabalyOkayString.size().width / (pipRect.width / maxHorizontalPipCount)))
+            } else {
+                return probabalyOkayString
+            }
+        }
+        
+        
     }
 }
 
