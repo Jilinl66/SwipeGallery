@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +18,19 @@
                     <view key="view" contentMode="scaleToFill" id="Dfh-u8-I7P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fi1-SB-Vg9" customClass="PlayingCardView" customModule="SwipeGallery" customModuleProvider="target">
+                                <rect key="frame" x="19" y="43.5" width="337.5" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.87623684719999995" blue="0.72930021229999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="fi1-SB-Vg9" firstAttribute="centerX" secondItem="je9-oF-AC8" secondAttribute="centerX" id="4xJ-tW-acb"/>
+                            <constraint firstItem="fi1-SB-Vg9" firstAttribute="height" secondItem="Dfh-u8-I7P" secondAttribute="height" multiplier="0.9" id="BOn-ze-Moa"/>
+                            <constraint firstItem="fi1-SB-Vg9" firstAttribute="centerY" secondItem="je9-oF-AC8" secondAttribute="centerY" id="I3g-na-QXo"/>
+                            <constraint firstItem="fi1-SB-Vg9" firstAttribute="width" secondItem="Dfh-u8-I7P" secondAttribute="width" multiplier="0.9" id="XHv-DD-mld"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="je9-oF-AC8"/>
                     </view>
                 </viewController>
