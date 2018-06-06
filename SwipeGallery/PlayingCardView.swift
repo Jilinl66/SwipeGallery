@@ -39,21 +39,26 @@ class PlayingCardView: UIView {
         return label
     }
     
-    private func configurCornerLabel(_ label: UILabel) {
+    private func configureCornerLabel(_ label: UILabel) {
         label.attributedText = cornerString
         label.frame.size = CGSize.zero
         label.sizeToFit()
         label.isHidden = !isFaceUp
     }
     
+    // Redraw when screen rotate
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        setNeedsDisplay()
+        setNeedsLayout()
+    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        configurCornerLabel(upperLeftCornerLabel)
+        configureCornerLabel(upperLeftCornerLabel)
         upperLeftCornerLabel.frame.origin = CGPoint(x: bounds.minX + cornerOffset, y: bounds.minY + cornerOffset)
         
-        configurCornerLabel(lowerRightCornerLabel)
+        configureCornerLabel(lowerRightCornerLabel)
         lowerRightCornerLabel.transform = CGAffineTransform.identity.rotated(by: CGFloat.pi)
         lowerRightCornerLabel.frame.origin = CGPoint(x: bounds.maxX - cornerOffset - lowerRightCornerLabel.frame.size.width, y: bounds.maxY - cornerOffset - lowerRightCornerLabel.frame.size.height)
     }
