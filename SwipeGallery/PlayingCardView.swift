@@ -12,8 +12,8 @@ import UIKit
 class PlayingCardView: UIView {
     
     var suit: String = "❤️"
-    var rank: Int = 7
-    var isFaceUp = true
+    var rank: Int = 12
+    var isFaceUp = false
     
     // Create attributed string and center it
     func centeredAttributedString(_ string: String, fontSize: CGFloat) -> NSAttributedString {
@@ -69,10 +69,16 @@ class PlayingCardView: UIView {
         UIColor.white.setFill()
         path.fill()
         
-        if let faceImage = UIImage(named: rankString+suit) {
-            
+        if isFaceUp {
+            if let faceCardImage = UIImage(named: rankString+suit) {
+                faceCardImage.draw(in: bounds.zoom(by: SizeRatio.faceCardImageSizeToBoundsHeight))
+            } else {
+                drawPips()
+            }
         } else {
-            drawPips()
+            if let cardBackImage = UIImage(named: "cardback") {
+                cardBackImage.draw(in: bounds)
+            }
         }
     }
     
@@ -152,8 +158,18 @@ extension CGRect {
     var rightHalf: CGRect {
         return CGRect(x: midX, y: minY, width: width / 2, height: height)
     }
+    func size(to size: CGSize) -> CGRect {
+        return CGRect(origin: origin, size: size)
+    }
+    func zoom(by scale: CGFloat) -> CGRect {
+        let newWidth = width * scale
+        let newHeight = height * scale
+        return insetBy(dx: (width - newWidth)/2, dy: (height - newHeight)/2)
+    }
 }
 
 extension CGPoint {
-    
+    func offsetBy(dx: CGFloat, dy: CGFloat) -> CGPoint {
+        return CGPoint(x: x + dx, y: y + dy)
+    }
 }
