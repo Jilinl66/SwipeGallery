@@ -55,6 +55,8 @@ struct PlayingCard: CustomStringConvertible {
             }
         }
         
+        
+        
         static var all: [Rank] {
             var allRanks = [Rank.ace]
             for pips in 2 ... 10 {

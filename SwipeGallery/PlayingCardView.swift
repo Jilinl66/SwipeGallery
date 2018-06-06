@@ -13,8 +13,9 @@ class PlayingCardView: UIView {
     
     var suit: String = "❤️"
     var rank: Int = 2
-    var isFaceUp = false
+    var isFaceUp = true
     
+    // Create attributed string and center it
     func centeredAttributedString(_ string: String, fontSize: CGFloat) -> NSAttributedString {
         var font = UIFont.preferredFont(forTextStyle: .body).withSize(fontSize)
         font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
@@ -24,14 +25,71 @@ class PlayingCardView: UIView {
     }
     
     var cornerString: NSAttributedString {
-        return centeredAttributedString(String(rank)+"\n"+suit, fontSize: 0.0)
+        return centeredAttributedString(rankString+"\n"+suit, fontSize: cornerFontSize)
+    }
+    
+    // Add upper left and bottom right labels, config
+    private lazy var upperLeftCornerLabel = createCornerLabel()
+    private lazy var lowerRightCornerLabel = createCornerLabel()
+    
+    private func createCornerLabel() -> UILabel {
+        let label = UILabel()
+        label.numberOfLines = 0
+        addSubview(label)
+        return label
+    }
+    
+    private func configurCornerLabel(_ label: UILabel) {
+        label.attributedText = cornerString
+        label.frame.size = CGSize.zero
+        label.sizeToFit()
+        label.isHidden = !isFaceUp
+    }
+    
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        configurCornerLabel(upperLeftCornerLabel)
+        upperLeftCornerLabel.frame.origin = CGPoint(x: bounds.minX + cornerOffset, y: bounds.minY + cornerOffset)
+        
+        configurCornerLabel(lowerRightCornerLabel)
+        lowerRightCornerLabel.transform = CGAffineTransform.identity.rotated(by: CGFloat.pi)
+        lowerRightCornerLabel.frame.origin = CGPoint(x: bounds.maxX - cornerOffset - lowerRightCornerLabel.frame.size.width, y: bounds.maxY - cornerOffset - lowerRightCornerLabel.frame.size.height)
     }
     
     override func draw(_ rect: CGRect) {
-        let path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height), cornerRadius: 16.0)
+        let path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height), cornerRadius: cornerRadius)
         UIColor.white.setFill()
         path.fill()
     }
 }
 
-
+extension PlayingCardView {
+    private struct SizeRatio {
+        static let cornerFontSizeToBoundsHeight: CGFloat = 0.085
+        static let cornerRadiusSizeToBoundsHeight: CGFloat = 0.06
+        static let cornerOffsetToCornerRadius: CGFloat = 0.33
+        static let faceCardImageSizeToBoundsHeight: CGFloat = 0.75
+    }
+    
+    private var cornerRadius: CGFloat {
+        return bounds.size.height * SizeRatio.cornerRadiusSizeToBoundsHeight
+    }
+    private var cornerOffset: CGFloat {
+        return cornerRadius * SizeRatio.cornerOffsetToCornerRadius
+    }
+    private var cornerFontSize: CGFloat {
+        return bounds.size.height * SizeRatio.cornerFontSizeToBoundsHeight
+    }
+    private var rankString: String {
+        switch rank {
+        case 1: return "A"
+        case 2...10: return String(rank)
+        case 11: return "J"
+        case 12: return "Q"
+        case 13: return "K"
+        default: return "?"
+        }
+    }
+}
