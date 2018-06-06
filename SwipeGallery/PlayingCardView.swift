@@ -14,6 +14,16 @@ class PlayingCardView: UIView {
     var suit: String = "❤️" { didSet { setNeedsDisplay(); setNeedsLayout() } }
     var rank: Int = 11 { didSet { setNeedsDisplay(); setNeedsLayout() } }
     var isFaceUp = true { didSet { setNeedsDisplay(); setNeedsLayout() } }
+    var faceCardScale = SizeRatio.faceCardImageSizeToBoundsHeight { didSet { setNeedsDisplay() } }
+    
+    @objc func adjustFaceCardScale(byHandlingGestureRecognizerBy recognizer: UIPinchGestureRecognizer) {
+        switch recognizer.state {
+        case .changed, .ended:
+            faceCardScale *= recognizer.scale
+            recognizer.scale = 1.0
+        default: break
+        }
+    }
     
     // Create attributed string and center it
     func centeredAttributedString(_ string: String, fontSize: CGFloat) -> NSAttributedString {
@@ -73,7 +83,7 @@ class PlayingCardView: UIView {
         if isFaceUp {
             // Need to add bundle and compatibleWith in order to show in interface builder
             if let faceCardImage = UIImage(named: rankString+suit, in: Bundle(for: self.classForCoder), compatibleWith: traitCollection) {
-                faceCardImage.draw(in: bounds.zoom(by: SizeRatio.faceCardImageSizeToBoundsHeight))
+                faceCardImage.draw(in: bounds.zoom(by: faceCardScale))
             } else {
                 drawPips()
             }
