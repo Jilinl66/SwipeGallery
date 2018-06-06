@@ -11,9 +11,9 @@ import UIKit
 @IBDesignable
 class PlayingCardView: UIView {
     
-    var suit: String = "❤️"
-    var rank: Int = 11
-    var isFaceUp = true
+    var suit: String = "❤️" { didSet { setNeedsDisplay(); setNeedsLayout() } }
+    var rank: Int = 11 { didSet { setNeedsDisplay(); setNeedsLayout() } }
+    var isFaceUp = true { didSet { setNeedsDisplay(); setNeedsLayout() } }
     
     // Create attributed string and center it
     func centeredAttributedString(_ string: String, fontSize: CGFloat) -> NSAttributedString {
@@ -53,6 +53,7 @@ class PlayingCardView: UIView {
     }
     
     override func layoutSubviews() {
+
         super.layoutSubviews()
         
         configureCornerLabel(upperLeftCornerLabel)
