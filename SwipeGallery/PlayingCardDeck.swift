@@ -3,7 +3,7 @@
 //  SwipeGallery
 //
 //  Created by Jilin Liu on 6/5/18.
-//  Copyright © 2018 JilinStudio, Inc. All rights reserved.
+//  Copyr ight © 2018 JilinStudio, Inc. All rights reserved.
 //
 
 import Foundation
